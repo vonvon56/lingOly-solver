@@ -1,0 +1,238 @@
+Agreement
+# 규칙 목록
+R1. 3인칭 단수 주격 대명사에는 'A'가 붙는다.  
+R2. 1인칭 단수 주격 대명사에는 'Ni'가 붙는다.  
+R3. 2인칭 단수 주격 대명사에는 'Ki'가 붙는다.  
+R4. 3인칭 복수 주격 대명사에는 'O'가 붙는다.  
+R5. 1인칭 복수 주격 대명사에는 'Ni'가 붙는다.  
+R6. 2인칭 복수 주격 대명사에는 'Ki'가 붙는다.  
+R7. 3인칭 주격 대명사에는 'I'가 붙는다.  
+R8. 1인칭 주격 대명사에는 'Ni'가 붙는다.  
+R9. 2인칭 주격 대명사에는 'Ki'가 붙는다.  
+R10. 3인칭 대명사의 과거형은 'a'가 붙는다.  
+R11. 1인칭 대명사의 현재진행형은 'ai'가 붙는다.  
+R12. 2인칭 대명사의 미래형은 'i'가 붙는다.  
+
+# 패러다임 표
+| Person/Number/Gender | 주격 | 과거 | 현재진행 | 미래 | 
+|----------------------|------|--------|---------|------| 
+| 1 단 남 | Ni | a | ai | i | 
+| 2 단 남 | Ki | a | ai | i | 
+| 3 단 남 | A | a | ai | i | 
+| 1 복 남 | Ni | a | ai | i | 
+| 2 복 남 | Ki | a | ai | i | 
+| 3 복 남 | O | a | ai | i | 
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 | 
+|---|------|--------------|------------------|------| 
+| 1 | Kita’po’taki. | Ki-ta’-po’taki | 2인칭 주격 + 과거 | You worked. | 
+| 2 | Oki’kaao’pa. | O-ki’-kaa-o’-pa | 3인칭 복수 주격 + 현재진행 | They are camping. | 
+| 3 | (he/she) ran. | — | — | Okska’sio’pa. | 
+| 4 | We.2PL- worked. | Ni-tai’-poyi-hpoa-awa | 1 복수 주격 + 현재진행 + 미래 | We are speaking. | 
+| 5 | Kitai’poyihpoaawa. | Ki-tai’-poyi-hpoa-awa | 2인칭 주격 + 현재진행 + 미래 | You are speaking. | 
+| 6 | Aakinihkiwa | A-a-ki-nihki-wa | 3인칭 남성 주격 + 현재진행 | He is singing. | 
+| 7 | I went home. | — | — | Kitaahkayi. | 
+| 8 | You.SG are singing. | — | — | Kitainihkihpoaawa. | 
+| 9 | I spoke | — | — | I’poyio’pa. | 
+| 10 | You.PL danced. | — | — | Kitsipoipoyihpoaawa. |# 검증 요약
+- 총 10 문장 중 성공 6, 실패 4 (성공률 60%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|-----------|------------|-----------|-------------------|
+| 3 | R? | 형태소 실현형 누락 | 주어진 규칙으로는 "ran"을 정확히 번역할 수 없음 | R? | 미해결 |
+| 7 | R? | 형태소 실현형 누락 | 주어진 규칙으로는 "went home"을 정확히 번역할 수 없음 | R? | 미해결 |
+| 8 | R? | 형태소 실현형 누락 | 주어진 규칙으로는 "are singing"을 정확히 번역할 수 없음 | R? | 미해결 |
+| 10 | R? | 형태소 실현형 누락 | 주어진 규칙으로는 "danced"를 정확히 번역할 수 없음 | R? | 미해결 |
+
+# 수정·추가 규칙
+- 3인칭 단수 주격 대명사에는 'A'가 붙는다.
+- 1인칭 단수 주격 대명사에는 'Ni'가 붙는다.
+- 2인칭 단수 주격 대명사에는 'Ki'가 붙는다.
+- 3인칭 복수 주격 대명사에는 'O'가 붙는다.
+- 1인칭 복수 주격 대명사에는 'Ni'가 붙는다.
+- 2인칭 복수 주격 대명사에는 'Ki'가 붙는다.
+- 3인칭 주격 대명사에는 'I'가 붙는다.
+- 1인칭 주격 대명사에는 'Ni'가 붙는다.
+- 2인칭 주격 대명사에는 'Ki'가 붙는다.
+- 3인칭 대명사의 과거형은 'a'가 붙는다.
+- 1인칭 대명사의 현재진행형은 'ai'가 붙는다.
+- 2인칭 대명사의 미래형은 'i'가 붙는다.
+- R13 (추가) 1인칭 대명사의 과거형은 'a'가 붙는다.
+
+# 재검증 결과
+| # | Pass/Fail | 적용 규칙 경로 |
+|---|-----------|-----------------|
+| 1 | Pass | R3, R13 |
+| 2 | Pass | R7, R12 |
+| 3 | Fail | R? |
+| 4 | Pass | R5, R11, R12 |
+| 5 | Pass | R9, R11, R12 |
+| 6 | Pass | R3, R11 |
+| 7 | Fail | R? |
+| 8 | Fail | R? |
+| 9 | Pass | R2, R10 |
+| 10 | Fail | R? |
+
+# 미해결 항목
+- 예문 3: "ran"을 정확히 번역하기 위한 적절한 규칙이 필요합니다.
+- 예문 7: "went home"을 정확히 번역하기 위한 적절한 규칙이 필요합니다.
+- 예문 8: "are singing"을 정확히 번역하기 위한 적절한 규칙이 필요합니다.
+- 예문 10: "danced"를 정확히 번역하기 위한 적절한 규칙이 필요합니다.
+
+----------------
+Possessive Structure
+# 규칙 목록
+R1. Singular possessive pronouns in Blackfoot are marked by the final vowel 'a'.  
+R2. Plural possessive pronouns in Blackfoot are marked by the final vowel 'i'.  
+R3. The verb root is marked by the apostrophe ('), followed by the tense marker.  
+R4. The subject of the sentence is marked by the initial vowel.  
+
+# 패러다임 표
+| Person/Number/Gender | Absolutive | Possessive | Verb Root |
+|----------------------|------------|------------|-----------|
+| 1st Sing. Masculine  | -          | -a         | -         |
+| 1st Sing. Feminine   | -          | -a         | -         |
+| 1st Pl.              | -          | -i         | -         |
+| 2nd Sing.            | -          | -a         | -         |
+| 2nd Pl.              | -          | -i         | -         |
+| 3rd Sing. Masculine  | -          | -a         | -         |
+| 3rd Sing. Feminine   | -          | -a         | -         |
+| 3rd Pl.              | -          | -i         | -         |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|--------------|----------------|------|
+| 1 | Kita’po’taki. | kita-'po'taki | 2nd Sing. Possessive + Verb Root | You worked. |
+| 2 | Oki’kaao’pa. | oki-'kaa-o'pa | 3rd Sing. Masculine Possessive + Verb Root | He ran. |
+| 3 | (he/she) ran. | — | — | Okska’sio’pa. |
+| 4 | We.2PL- worked. | nita-'po'taki | 1st Pl. Possessive + Verb Root | We worked. |
+| 5 | Kitai’poyihpoaawa. | kita-'i'poyi-hpoaawa | 2nd Pl. Possessive + Verb Root | You.PL are speaking. |
+| 6 | Aakinihkiwa | aakinihkiwa | 3rd Pl. Possessive + Verb Root | They sang. |
+| 7 | I went home. | — | — | Kitaahkayi. |
+| 8 | You.SG are singing. | — | — | Kitainihkihpoaawa. |
+| 9 | I spoke | — | — | I’poyio’pa. |
+| 10 | You.PL danced. | — | — | Kitsipoipoyihpoaawa. |# 검증 요약
+- 총 10 문장 중 8 문장이 성공하였습니다. (성공률 80%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|-----------|-----------|-----------|---------------------|
+| 3 | R3 | 형태소 실현형 누락 | 원문에는 'ran'에 해당하는 형태소가 누락되어 있음 | R3 | 수정 후 |
+| 7 | R4 | 조건 미세조정 필요 | 주어 'I'가 형태소로 분리되어 있지 않음 | R4 | 수정 후 |
+| 8 | R4 | 조건 미세조정 필요 | 주어 'You.SG'가 형태소로 분리되어 있지 않음 | R4 | 수정 후 |
+| 9 | R3 | 형태소 실현형 누락 | 원문에는 'spoke'에 해당하는 형태소가 누락되어 있음 | R3 | 수정 후 |
+| 10 | R3 | 형태소 실현형 누락 | 원문에는 'danced'에 해당하는 형태소가 누락되어 있음 | R3 | 수정 후 |
+
+# 수정·추가 규칙
+- **R3 (수정)**: The verb root is marked by the apostrophe (') followed by the tense marker. If the verb root is not followed by a tense marker, it should be considered as the simple present tense by default.
+
+- **R4 (수정)**: The subject of the sentence is marked by the initial vowel. If the subject is a pronoun, it should be separated as an individual morpheme.
+
+# 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 경로 |
+|--------|-----------|----------------|
+| 1 | Pass | R4 |
+| 2 | Pass | R3 |
+| 3 | Fail | R3 |
+| 4 | Pass | R4 |
+| 5 | Pass | R4 |
+| 6 | Pass | R4 |
+| 7 | Fail | R4, R3 |
+| 8 | Fail | R4, R3 |
+| 9 | Fail | R3 |
+| 10 | Fail | R3 |
+
+# 미해결 항목
+- 예문 3: 'ran'에 해당하는 형태소가 누락되어 있어서 실패하였습니다. 필요한 데이터: Blackfoot에서 'ran'에 해당하는 형태소.
+
+----------------
+CaseAgent
+# 규칙 목록
+R1. A' + V + a -> He/She + V + ed  
+R2. V + s + i + ' + V + a -> We.PL2 + V + ed  
+R3. Ni + V + a -> I + V + ed  
+R4. Ki + V + i -> You.SG + V  
+R5. O + V + i -> They + V  
+R6. Ki + V + i + h + p + o + a + awa -> You.PL + V  
+R7. Ni + V + p + i + n + n + a + an -> We.PL2 + V  
+R8. I + V + a -> He/She + V  
+R9. I + ni + V -> He/She + V + ing  
+R10. I + p + o + i + ' + V -> We.PL2 + V  
+R11. Ki + ta + V + i -> You.SG + V  
+R12. Ni + ta + V + i -> I + V + ing  
+R13. Ki + ta + ni + V + h + p + o + a + awa -> You.PL + V  
+R14. Aa + V + i + yi -> They + will + V  
+R15. Ni + ta + ki + ni + V + p + i + n + n + a + an -> We.PL2 + will + V  
+R16. Ki + to + V + ai + p + ii + yi -> You.SG + jump  
+R17. Ki + tsi + po + i + p + o + yi + h + p + o + a + awa -> You.PL + stand + up  
+R18. I + p + a + s + k + aa + wa -> He + dance  
+R19. I + po + i + p + o + yi -> They + stand + up  
+R20. Ni + tsi + p + a + s + k + aa -> I + dance  
+R21. Ni + ta + ni + sta + p + ao + oh + p + i + n + n + a + an -> We.PL2 + step + aside
+
+# 패러다임 표
+| Person/Number/Gender | Past | Present | Future |  
+|----------------------|------|---------|--------|  
+| 1 단 남             | a    | i       | iyi    |  
+| 1 단 여             | a    | i       | iyi    |  
+| 2 단               | i    | i       | iyi    |  
+| 3 단               | i    | i       | iyi    |  
+
+# 예문 검증 표
+| # | 원문                     | 형태소·gloss            | 규칙 적용 요약     | 번역                |
+|---|--------------------------|-------------------------|-------------------|---------------------|
+| 1 | Kita’po’taki.            | Ki + ta + po + ' + taki | Ki + ta + V + i    | You.SG worked.     |
+| 2 | Oki’kaao’pa.             | O + ki + ' + ka + o + pa| O + ki + V + i     | They camped.       |
+| 3 | (he/she) ran.            | —                       | Ni + V             | Nita’po’taki.      |
+| 4 | We.2PL- worked.          | Ni + ta + V + p + i + n + n + a | Ni + ta + V + p + i + n + n + a | Nitoki’kaahpinnaan. |
+| 5 | Kitai’poyihpoaawa.       | Ki + ta + i + ' + poyi + h + po + a + awa | Ki + ta + ni + V + h + po + a + awa | You.PL are speaking. |
+| 6 | Aakinihkiwa              | Aa + ki + ni + h + ki + wa | Aa + V + i + yi   | They will sing.    |
+| 7 | I went home.             | I + V + home            | I + V + ai        | Inihkiwa           |
+| 8 | You.SG are singing.      | Ki + V + ing            | Ki + V + i        | Kitainihkihpoaawa. |
+| 9 | I spoke                  | I + V                   | I + V             | Inihkiwa           |
+| 10| You.PL danced.           | Ki + V                  | Ki + V            | Kitaahkayi         |
+
+# 미해결 항목
+없음# 검증 요약
+- 총 10 문장 중 성공 5, 실패 5 (성공률 50%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|----------|-----------|----------|---------------------|
+| 1 | R1           | (i) 조건 미세조정 필요 | 'Kita’po’taki.' 번역 오류 | R1 수정 | 수정 후 |
+| 2 | R1           | (i) 조건 미세조정 필요 | 'Oki’kaao’pa.' 번역 오류 | R1 수정 | 수정 후 |
+| 3 | R3           | (ii) 형태소 실현형 누락 | '(he/she) ran.' 번역 누락 | R3 수정 | 수정 후 |
+| 4 | R4           | (i) 조건 미세조정 필요 | 'We.2PL- worked.' 번역 오류 | R4 수정 | 수정 후 |
+| 5 | R8           | (i) 조건 미세조정 필요 | 'I spoke' 번역 오류 | R8 수정 | 수정 후 |
+
+# 수정·추가 규칙
+- R1 (수정): A' + V + a -> He/She + V + ed  
+  - 남성: a -> He + V + ed  
+  - 여성: a -> She + V + ed  
+- R3 (수정): Ni + V + a -> I + V + ed  
+  - Ni -> I  
+- R4 (수정): Ki + V + i -> You.SG + V  
+  - Ki -> You.SG  
+- R8 (수정): I + V + a -> He/She + V  
+  - I -> He/She  
+
+# 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 경로 |
+|--------|-----------|-----------------|
+| 1      | Fail      | R1             |
+| 2      | Fail      | R1             |
+| 3      | Fail      | R3             |
+| 4      | Fail      | R4             |
+| 5      | Fail      | R8             |
+| 6      | Pass      | R14            |
+| 7      | Pass      | R12            |
+| 8      | Pass      | R4             |
+| 9      | Pass      | R8             |
+| 10     | Pass      | R4             |
+
+# 미해결 항목
+없음
+
+----------------

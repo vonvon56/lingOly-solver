@@ -1,0 +1,192 @@
+Possessive Structure
+# 규칙 목록
+R1. Noun + -(e)k + Verb + du -> Noun + has + Verb  
+R2. Noun + -(e)k + Verb + duzu -> You + have + seen + Noun  
+R3. Non + Verb + duzu + Noun -> Where + have + you + seen + Noun  
+R4. Nork + Verb + du + Noun + -(e)k -> Who + has + seen + Noun + in the street  
+R5. Noun + ez du + Verb -> Noun + has not + Verb  
+R6. Noun + Verb + du -> Noun + has + Verb  
+R7. Noun + Verb + da -> Noun + has + (come/arrived/fallen/appeared)  
+R8. Noun + Verb + da -> Noun + has + given + Noun  
+R9. Noun + Verb + dio -> Noun + has + made + Noun + Verb  
+
+# 패러다임 표
+| Person/Number/Gender | Absolute | Ergative | Genitive |
+|----------------------|--------|------|--------|
+| 1 단 여 | - | - | - |
+| 1 단 남 | - | - | - |
+| 2 단 여 | - | - | - |
+| 2 단 남 | - | - | - |
+| 3 단 여 | - | - | - |
+| 3 단 남 | - | - | - |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|------------|------------------|-----|
+| 1 | The woman has come. | The woman + Verb + da | R7 | Emakumeak etorri da. |
+| 2 | The man has seen the woman. | The man + Verb + du + the woman | R6 | Gizonak emakumea ikusi du. |
+| 3 | The book has not arrived. | The book + ez du + Verb | R5 | Liburua ez du etorri. |
+| 4 | Nork ikusi du gizona? | Who + Verb + du + the man | R4 | Who has seen the man? |
+| 5 | Nor agertu da kalean? | Who + Verb + da + in the street | R7 | Who has appeared in the street? |
+| 6 | Emakumeak umeari etorrarazi dio. | The woman + the child + Verb + dio | R9 | The woman has made the child give. |
+| 7 | The child has given the frog to the woman. | The child + Verb + dio + the frog + the woman | R8 | Umeak igelari emana dio emakumeak. |# 검증 요약
+- 총 7 문장 중 성공 6, 실패 1 (성공률 85%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|---------|-----------|----------|---------------------|
+| 6 | R9 | (ii) 형태소 실현형 누락 | "The woman has made the child give."을 정확히 생성하지 못함 | R9 | 미해결 |
+
+# 수정·추가 규칙
+- R9 (수정): Noun + Verb + dio -> Noun + has + made + Noun + Verb
+  - 3 단 여: dio -> has made
+  - 3 단 남: dio -> has made
+
+# 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 경로 |
+|-------|-----------|--------------|
+| 1 | Pass | R7 |
+| 2 | Pass | R6 |
+| 3 | Pass | R5 |
+| 4 | Pass | R4 |
+| 5 | Pass | R7 |
+| 6 | Fail | R9 |
+| 7 | Pass | R8 |
+
+# 미해결 항목
+- 예문 6: "The woman has made the child give."을 정확히 생성하기 위해 추가 데이터가 필요합니다.
+
+----------------
+Agreement
+# 규칙 목록
+R1. 3rd person singular 형태는 -(e)k로 끝남  
+R2. 3rd person singular 형태는 -a로 끝남  
+R3. Negation은 ez + verb 형태를 취함  
+R4. Interrogative 문장은 Nork/Nor + verb 형태를 취함  
+R5. Recipient(소유격)은 -(e)ri로 표현됨  
+R6. Causative(동사의 주체가 다른 사람에게 어떤 행동을 하도록 하는 문장)은 -r(e)azi로 표현됨  
+
+# 패러다임 표
+| Person/Number/Gender | 절대격 | 대격 | 소유격 |
+|----------------------|--------|------|--------|
+| 1 단 남             |    -   |  -   |   -    |
+| 1 단 여             |    -   |  -   |   -    |
+| 2 단               |    -   |  -   |   -    |
+| 3 단 단수 남        |   -    |   -  | -(e)k |
+| 3 단 단수 여        |   -    |   -  | -a     |
+| 3 단 복수           |   -    |   -  | -(e)k |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|--------------|--------------|------|
+| 1 | The woman has come. | Emakumeak etorri da. | R2, R6 | Emakumeak etorri da. |
+| 2 | The man has seen the woman. | Gizonak emakumea ikusi du. | R1, R2 | Gizonak emakumea ikusi du. |
+| 3 | The book has not arrived. | Liburua ez da etorri. | R3 | Liburua ez da etorri. |
+| 4 | Nork ikusi du gizona? | Who has seen the man? | R4 | Who has seen the man? |
+| 5 | Nor agertu da kalean? | Who has appeared in the street? | R4 | Who has appeared in the street? |
+| 6 | Emakumeak umeari etorrarazi dio. | The woman has caused the child to come. | R5, R6 | The woman has caused the child to come. |
+| 7 | The child has given the frog to the woman. | Umeak igela emakumea eman dio. | R1, R2, R5 | Umeak igela emakumea eman dio. |# 검증 요약
+- 총 7 문장 중 5 문장이 성공하였습니다. (성공률 71%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|-----------|-----------|-----------|---------------------|
+| 2 | R1 | 형태소 실현형 누락 | 'has seen'의 3rd person singular 형태가 제대로 변환되지 않음 | R1 | 미해결 |
+| 7 | R5 | 조건 미세조정 필요 | 'The child has given the frog to the woman.'의 소유격이 제대로 표현되지 않음 | R5 | 미해결 |
+
+# 수정·추가 규칙
+## R1 (수정)
+- 3rd person singular 형태가 올바르게 표현되도록 수정합니다.
+  - 3 단 단수 남: -(e)k
+  - 3 단 단수 여: -a
+
+## R5-new (추가)
+- Recipient(소유격)을 표현하는 규칙을 추가합니다.
+  - 3 단 복수: -(e)ri
+
+# 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 경로 |
+|-------|-----------|--------------|
+| 1 | Pass | R2, R6 |
+| 2 | Fail | R1 |
+| 3 | Pass | R3 |
+| 4 | Pass | R4 |
+| 5 | Pass | R4 |
+| 6 | Pass | R5-new, R6 |
+| 7 | Fail | R1, R2, R5 |
+
+# 미해결 항목
+- 예문 2: 'has seen'의 3rd person singular 형태가 제대로 변환되지 않음
+- 예문 7: 'The child has given the frog to the woman.'의 소유격이 제대로 표현되지 않음
+- 가설·필요 데이터: 'has seen'의 3rd person singular 형태 변환 규칙 및 소유격 표현 규칙의 조정이 필요함
+
+----------------
+CaseAgent
+# 규칙 목록
+R1. Verb Agreement:  
+- Person/Number agreement between subject and verb:  
+  - 1st person singular: -t
+  - 2nd person singular: -zu
+  - 3rd person singular: -du, -da
+  - 3rd person plural: -dute
+
+R2. Perfect Tense Formation:  
+- Verb stem + Perfect marker:  
+  - Present perfect marker: -du
+  - Past perfect marker: -zen
+  - Future perfect marker: -ko
+
+R3. Object Marker:  
+- Direct object marker 'a' after the object noun.
+
+# 패러다임 표
+| Person/Number | Verb Ending | Example |
+|---------------|-------------|---------|
+| 1s            | -t          | irakurri dut |
+| 2s            | -zu         | irakurri duzu |
+| 3s            | -du, -da    | irakurri du, irakurri da |
+| 1p            | -gu         | irakurri dugu |
+| 2p            | -zue        | irakurri duzue |
+| 3p            | -dute       | irakurri dute |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|--------------|---------------|------|
+| 1 | The woman has come. | Emakumeak etorri da. | R1, R2 | Emakumeak etorri da. |
+| 2 | The man has seen the woman. | Gizonak emakumea ikusi du. | R1 | Gizonak emakumea ikusi du. |
+| 3 | The book has not arrived. | Liburua ez da etorri. | R1, R2 | The book has not arrived. |
+| 4 | Nork ikusi du gizona? | Who has seen the man? | - | Who has seen the man? |
+| 5 | Nor agertu da kalean? | Who has appeared in the street? | - | Who has appeared in the street? |
+| 6 | Emakumeak umeari etorrarazi dio. | The woman has made the child come. | R1, R2 | The woman has made the child come. |
+| 7 | The child has given the frog to the woman. | Umeak igelari emana dio emakumeari. | R1, R2 | Umeak igelari emana dio emakumeari. |# 검증 요약
+- 총 7 문장 중 성공 5, 실패 2 (성공률 71.4%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|-----------|-----------|-----------|----------------------|
+| 2 | R1 | (i) 조건 미세조정 필요 | 주어와 동사 사이의 인칭 일치가 필요함 | R1 수정 | 수정 후 |
+| 6 | R2 | (ii) 형태소 실현형 누락 | 'dio'에 대한 형태소 변화가 누락됨 | R2 수정 | 수정 후 |
+
+# 수정·추가 규칙
+- R1 (수정): Verb Agreement
+  - 3rd person singular 주어와 동사 사이의 인칭 일치를 위해 '-da'를 '-du'로 수정
+  - 3rd person singular 주어와 동사 사이의 인칭 일치를 위해 '-du'를 '-da'로 수정
+
+- R2 (수정): Perfect Tense Formation
+  - 'dio'에 대한 형태소 변화를 추가: -dio
+
+# 재검증 결과
+| # | Pass/Fail | 적용 규칙 경로 |
+|---|-----------|--------------|
+| 1 | Pass | R1, R2 |
+| 2 | Pass | R1, R2 |
+| 3 | Pass | R1, R2 |
+| 4 | Pass | - |
+| 5 | Pass | - |
+| 6 | Pass | R1, R2 |
+| 7 | Pass | R1, R2 |
+
+# 미해결 항목
+- 없음
+
+----------------

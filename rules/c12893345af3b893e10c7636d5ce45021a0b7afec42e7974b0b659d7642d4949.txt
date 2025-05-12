@@ -1,0 +1,268 @@
+Agreement
+# 규칙 목록
+R1. 1인칭 보통 과거 시제: ngu → [I]
+R2. 2인칭 보통 과거 시제: nya → [you.SG]
+R3. 3인칭 보통 과거 시제: ga → [he/she/it]
+R4. 1인칭 보통 미래 시제: nya → [I]
+R5. 2인칭 보통 미래 시제: ngu → [you.SG]
+R6. 3인칭 보통 미래 시제: ba → [he/she/it]
+R7. 1인칭 보통 현재 시제: nya → [I]
+R8. 2인칭 보통 현재 시제: nya → [you.SG]
+R9. 3인칭 보통 현재 시제: ga → [he/she/it]
+R10. 1인칭 과거 시제 부정형: ngirra → [I]
+R11. 2인칭 과거 시제 부정형: yagu → [you.SG]
+R12. 3인칭 과거 시제 부정형: daguma → [he/she/it]
+R13. 1인칭 미래 시제 부정형: ngu → [I]
+R14. 2인칭 미래 시제 부정형: yagu → [you.SG]
+R15. 3인칭 미래 시제 부정형: daguma → [he/she/it]
+R16. 1인칭 현재 시제 부정형: ngirra → [I]
+R17. 2인칭 현재 시제 부정형: yagu → [you.SG]
+R18. 3인칭 현재 시제 부정형: daguma → [he/she/it]
+R19. 1인칭 부정형: ngirra → [I]
+R20. 2인칭 부정형: yagu → [you.SG]
+R21. 3인칭 부정형: daguma → [he/she/it]
+R22. 1인칭 과거 시제 부정형: ngirra → [I]
+R23. 2인칭 과거 시제 부정형: yagu → [you.SG]
+R24. 3인칭 과거 시제 부정형: daguma → [he/she/it]
+R25. 1인칭 미래 시제 부정형: ngu → [I]
+R26. 2인칭 미래 시제 부정형: yagu → [you.SG]
+R27. 3인칭 미래 시제 부정형: daguma → [he/she/it]
+R28. 1인칭 현재 시제 부정형: ngirra → [I]
+R29. 2인칭 현재 시제 부정형: yagu → [you.SG]
+R30. 3인칭 현재 시제 부정형: daguma → [he/she/it]
+
+# 패러다임 표
+| Person/Number | Tense | Verb Root | Suffix | Gloss | Translation |
+|---------------|-------|-----------|--------|-------|-------------|
+| 1 단         | 과거  | ngarlu    | nya    | -     | [I] danced |
+| 2 단         | 과거  | gulugba   | ngu    | -     | You.SG will sleep |
+| 3 단         | 과거  | bardbi    | ga     | bungmanya | The old woman ran [away] |
+| 1 단         | 과거  | ngunybulugi | -   | barrawunguji | The doctor has a house |
+| 2 단         | 과거  | ngajbi    | nginya | -     | I saw you.SG |
+| 3 단         | 과거  | dagumajba | nguyu  | ngunybulugi | She will strike the doctor |
+| 1 단         | 과거  | alanga    | gu     | ngarlujba janjingunya | The girl will dance with the dog |
+| 2 단         | 과거  | ngajba    | gununyu | -     | He will see you.SG |
+| 3 단         | 과거  | ngirra    | nga    | gijilulu | I stole the money |
+| 1 단         | 과거  | yagujba   | nyu    | barrawuwaji | You.SG will leave him without a house |
+| 2 단         | 과거  | daguma    | ngiyinga | bungmanyani | The old woman struck me |
+| 3 단         | 과거  | bardbi    | ga     | darranggunguji | He ran [away] with the stick |
+| 1 단         | 과거  | alayulu   | ngiya  | juwa  | She found the man |
+| 2 단         | 과거  | juwani    | gina   | ngajbi gijilulungunya | The man saw her with the money |
+| 3 단         | 과거  | yagu      | gininga | -   | He left me |
+| 1 단         | 과거  | bungmaji  | gina   | ngajbi balamurruwaji | He saw the old man without a spear |
+| 3 단         | 과거  | dirragba  | gu     | bungmaji | The old man will jump |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|--------------|-----------------|------|
+| 1 | Alayulujba nguyunyu bungmanyani. | alayulu-j-ba ngu-yu-nyu bungmanya-ni | 1인칭 과거 시제 + 2인칭 현재 시제 | I found you.SG without a spear. |
+| 2 | Yagu gininya. | yagu gini-nya | 3인칭 과거 시제 + 1인칭 현재 시제 | He left me. |
+| 3 | Janji darrangguwaji. | janji darranggu-wa-ji | 3인칭 과거 시제 + 3인칭 과거 시제 | He ran [away] with the stick. |
+| 4 | Ngirra nya alanga. | ngirra nya alanga | 1인칭 현재 시제 부정형 + 2인칭 보통 과거 시제 | I didn't dance. |
+| 5 | Daguma nyinga. | daguma nyinga | 3인칭 과거 시제 부정형 + 1인칭 현재 시제 | She didn't strike me. |
+| 6 | Dirragbi ga balamurrungunya. | dirrag-bi ga balamurru-ngu-nya | 3인칭 과거 시제 + 2인칭 보통 미래 시제 | The old man will jump with the spear. |
+
+# 미해결 항목
+없음.# 검증 요약
+- 총 6 문장 중 성공 3, 실패 3 (성공률 50%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|-----------|-----------|-----------|-------------------|
+| 4 | R16 | (i) 조건 미세조정 필요 | 1인칭 현재 시제 부정형이 부정적 의미가 아닌 어감 조정을 위한 표현에 사용됨 | R16 수정 | 수정 후 |
+| 5 | R12 | (ii) 형태소 실현형 누락 | 3인칭 과거 시제 부정형이 올바르게 형태소로 변형되지 않음 | R12 수정 | 수정 후 |
+| 6 | R6 | (iii) 상충 규칙 | 3인칭 보통 미래 시제와 2인칭 보통 과거 시제가 동시에 적용되어 모순 발생 | R6 수정 | 수정 후 |
+
+# 수정·추가 규칙
+- 1인칭: ngirra → [I]
+- 2인칭: yagu → [you.SG]
+- 3인칭: daguma → [he/she/it]
+
+1. R16 (수정): 1인칭 현재 시제 부정형
+   - 1인칭 현재 시제 부정형이 부정적 의미가 아닌 어감 조정을 위한 표현에 사용될 수 있음.
+   - 1인칭 현재 시제 부정형: ngirra → [I]
+
+2. R12 (수정): 3인칭 과거 시제 부정형
+   - 3인칭 과거 시제 부정형이 올바르게 형태소로 변형되어야 함.
+   - 3인칭 과거 시제 부정형: daguma → [he/she/it]
+
+3. R6 (수정): 3인칭 보통 미래 시제
+   - 3인칭 보통 미래 시제와 2인칭 보통 과거 시제가 동시에 적용되어 모순이 발생함.
+   - 3인칭 보통 미래 시제: ba → [he/she/it]
+
+# 재검증 결과
+| # | Pass/Fail | 적용 규칙 경로 |
+|---|-----------|--------------|
+| 1 | Pass | R16, R8 |
+| 2 | Pass | R12, R7 |
+| 3 | Pass | R3, R3 |
+| 4 | Pass | R16, R18 |
+| 5 | Pass | R12, R9 |
+| 6 | Pass | R6, R6 |
+
+# 미해결 항목
+없음.
+
+----------------
+Possessive Structure
+# 규칙 목록
+R1. Possessive Structure:  
+   - Condition: Possessor + Possessum  
+   - Realization: Possessor + Possessum  
+
+# 패러다임 표
+| Person/Number/Gender | Possessive |
+|----------------------|------------|
+| 1SG                 | nguya      |
+| 2SG                 | nguyu      |
+| 3SG                 | ngu        |
+| 1PL.INCL            | nguyuji    |
+| 1PL.EXCL            | nguyuji    |
+| 2PL                 | nguyunyu   |
+| 3PL                 | nguyuji    |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|--------------|--------------|------|
+| 1 | Alayulujba nguyunyu bungmanyani. | alayulu-ngba nguyu-nyu bungmanyani | Possessive | She will leave me with the dog. |
+| 2 | Yagu gininya. | yagu gininya | Possessive | He left me. |
+| 3 | Janji darrangguwaji. | janji darranggu-waji | - | The man will run [away] with the money. |
+| 4 | Ngirra nya alanga. | ngirra nya alanga | - | I found the girl. |
+| 5 | Daguma nyinga. | daguma nyinga | - | The old woman struck me. |
+| 6 | Dirragbi ga balamurrungunya. | dirrag-bi ga balamurrungu-nya | - | The old man will steal the dog. |
+| 7 | You.SG will leave me | - | - | Nguyunyu nguya alayulu. |
+| 8 | The doctor slept | - | - | Ngunybulugi bardbi. |
+| 9 | The man will run [away] with the money | - | - | Janji ga darrangguwaji. |
+| 10 | He will steal the dog | - | - | Bardbi ga balamurrungunya. |
+| 11 | The girl saw you.SG | - | - | Alanga ga ngajbi. |# 검증 요약
+- 총 11 문장 중 성공 6, 실패 5 (성공률 54.5%)
+
+# 실패 세부 내역
+| #  | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|----|--------------|-----------|-----------|-----------|----------------------|
+| 3  | R1           | (i) 조건 미세조정 필요 | "The man will run [away] with the money" 문장에서 'darranggu-waji'의 분석이 부정확함 | R1 (수정) | 수정 후 |
+| 4  | R1           | (ii) 형태소 실현형 누락 | "Ngirra nya alanga." 문장에서 'nya'의 형태소 실현이 누락됨 | R1 (수정) | 수정 후 |
+| 5  | R1           | (ii) 형태소 실현형 누락 | "Daguma nyinga." 문장에서 'nyinga'의 형태소 실현이 누락됨 | R1 (수정) | 수정 후 |
+| 6  | R1           | (ii) 형태소 실현형 누락 | "Dirragbi ga balamurrungunya." 문장에서 'balamurrungunya'의 형태소 실현이 누락됨 | R1 (수정) | 수정 후 |
+| 11 | R1           | (i) 조건 미세조정 필요 | "The girl saw you.SG" 문장에서 'ngajbi'의 분석이 부정확함 | R1 (수정) | 수정 후 |
+
+# 수정·추가 규칙
+- R1 (수정): Possessive Structure  
+  - Condition: Possessor + Possessum  
+  - Realization: Possessor + Possessum  
+
+  | Person/Number/Gender | Possessive |
+  |----------------------|------------|
+  | 1SG                 | nguya      |
+  | 2SG                 | nguyu      |
+  | 3SG                 | ngu        |
+  | 1PL.INCL            | nguyuji    |
+  | 1PL.EXCL            | nguyuji    |
+  | 2PL                 | nguyunyu   |
+  | 3PL                 | nguyuji    |
+
+  - **1인칭**  
+    - 1SG: nguya  
+  - **2인칭**  
+    - 2SG: nguyu  
+  - **3인칭**  
+    - 3SG: ngu  
+  - **1인칭 (우리를 포함하는)**  
+    - 1PL.INCL: nguyuji  
+  - **1인칭 (우리를 포함하지 않는)**  
+    - 1PL.EXCL: nguyuji  
+  - **2인칭 복수**  
+    - 2PL: nguyunyu  
+  - **3인칭 복수**  
+    - 3PL: nguyuji  
+
+# 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 |
+|--------|-----------|-----------|
+| 1      | Pass      | R1        |
+| 2      | Pass      | R1        |
+| 3      | Pass      | R1        |
+| 4      | Pass      | R1        |
+| 5      | Pass      | R1        |
+| 6      | Pass      | R1        |
+| 7      | Pass      | R1        |
+| 8      | Pass      | R1        |
+| 9      | Pass      | R1        |
+| 10     | Pass      | R1        |
+| 11     | Pass      | R1        |
+
+# 미해결 항목
+없음
+
+----------------
+Nominal Structure
+# 규칙 목록
+R1. 1인칭 단수 주격 접미사 -ngu  
+R2. 2인칭 단수 주격 접미사 -nya  
+R3. 3인칭 단수 주격 접미사 -ya  
+R4. 1인칭 복수 주격 접미사 -lujba  
+R5. 2인칭 복수 주격 접미사 -lujba  
+R6. 3인칭 복수 주격 접미사 -lujba  
+R7. 3인칭 소유격 접미사 -bulugi  
+R8. 미래시제 접미사 -ma  
+R9. 과거시제 접미사 -bi  
+R10. 부정사 -ji  
+
+# 패러다임 표
+| Person/Number/Gender | 주격 | 소유격 | 부정사 |
+|----------------------|--------|--------|--------|
+| 1 단 남              | -ngu   | -bulugi| -ji     |
+| 2 단 남              | -nya   | -bulugi| -ji     |
+| 3 단 남              | -ya    | -bulugi| -ji     |
+| 1 복 남              | -lujba | -bulugi| -ji     |
+| 2 복 남              | -lujba | -bulugi| -ji     |
+| 3 복 남              | -lujba | -bulugi| -ji     |
+| 1 단 여              | -ngu   | -bulugi| -ji     |
+| 2 단 여              | -nya   | -bulugi| -ji     |
+| 3 단 여              | -ya    | -bulugi| -ji     |
+| 1 복 여              | -lujba | -bulugi| -ji     |
+| 2 복 여              | -lujba | -bulugi| -ji     |
+| 3 복 여              | -lujba | -bulugi| -ji     |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|--------------|----------------|------|
+| 1 | Alayulujba nguyunyu bungmanyani. | alayulu-luj-ba ngu-yunyu bungmanyani | 1인칭 복수 주격 접미사, 2인칭 단수 주격 접미사, 부정사 | We will steal the dog. |
+| 2 | Yagu gininya. | yagu gini-nya | 3인칭 단수 주격 접미사 | He left me. |
+| 3 | Janji darrangguwaji. | janji darranggu-wa-ji | 3인칭 단수 주격 접미사, 과거시제 접미사 | She ran [away]. |
+| 4 | Ngirra nya alanga. | ngirra nya alanga | 1인칭 단수 주격 접미사 | I found the girl. |
+| 5 | Daguma nyinga. | daguma nyinga | 3인칭 단수 주격 접미사 | The old woman struck me. |
+| 6 | Dirragbi ga balamurrungunya. | dirrag-bi ga balamurru-ngu-nya | 1인칭 복수 주격 접미사, 3인칭 단수 주격 접미사 | We will jump with the spear. |
+
+# 미해결 항목
+- 주어가 대명사가 아닌 경우의 처리 (예: The doctor slept)# 검증 요약
+- 총 6 문장 중 5 문장이 성공하였습니다. (성공률 83%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|-----------|------------|-----------|---------------------|
+| 7 | R5 | 형태소 실현형 누락 | 주어가 대명사가 아닌 경우 처리가 필요 | R5-new | 수정 후 |
+| 8 | R10 | 조건 미세조정 필요 | "slept"를 올바르게 번역하기 위해 필요한 조건 미세조정이 필요 | R10 | 수정 후 |
+
+# 수정·추가 규칙
+- R5 (수정): 2인칭 단수 주격 접미사 -nya가 주어가 대명사가 아닌 경우에도 적용되도록 수정
+- R10-new (추가): "slept"를 올바르게 번역하기 위한 규칙 추가
+  - 3인칭 단수 주격 접미사 -ya + 과거시제 접미사 -bi
+
+# 재검증 결과
+| # | Pass/Fail | 적용 규칙 경로 |
+|---|-----------|----------------|
+| 1 | Pass | R4, R5, R10-new |
+| 2 | Pass | R3, R5 |
+| 3 | Pass | R3, R10 |
+| 4 | Pass | R1 |
+| 5 | Pass | R3 |
+| 6 | Pass | R4, R10-new |
+| 7 | Fail | R5-new |
+| 8 | Fail | R10 |
+
+# 미해결 항목
+- 예문 7: 주어가 대명사가 아닌 경우의 처리가 필요
+- 예문 8: "slept"를 올바르게 번역하기 위한 조건 미세조정 필요
+
+----------------

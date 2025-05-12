@@ -1,0 +1,82 @@
+{
+  "source_language": "Basque",
+  "target_language": "English",
+  "meta": "",
+  "train": "Nire anaiarekin bizi da. -> He lives with my brother.\nNeskaren kotxea nahi dut. -> I want the girl’s car.\nJantziko naiz eta joango gara. -> I’ll get dressed and we’ll go.\nUmea kalean erori da. -> The child has fallen in the street.\nNire aitak erantzuna daki. -> My father knows the answer.\nArdoa bukatu duzu? -> Have you fnished the wine?\nNire aita Californian bizi da. -> My father lives in California.\nEtxera joango gara. -> We’ll go home.\nNire semeak kotxe berria erosi du. -> My son has bought a new car.\nEz dakit. -> I don’t know.\nEmakumeak liburua irakurri du. -> The woman has read the book.\nAtlantkoa ez da basoa. -> The Atlantc is not a forest.\nArdoarekin pasta jaten dut. -> I eat pasta with wine.\nzuri -> white\nIngalatera -> England\nfamilia -> family\nEuropan -> europe",
+  "test": [
+    [
+      "Neskak problema daki.",
+      "The girl knows the problem.",
+      ">"
+    ],
+    [
+      "Emakumearen etxea Europan da.",
+      "The woman’s home is in Europe.",
+      ">"
+    ],
+    [
+      "Nire aitaren liburu berria irrakuri dut.",
+      "I have read my father’s new book.",
+      ">"
+    ],
+    [
+      "Aitarekin hotelera joango naiz.",
+      "I will go to the hotel with my father.",
+      ">"
+    ],
+    [
+      "Ardo zuria nahi dut.",
+      "I want white wine.",
+      "<"
+    ],
+    [
+      "Ardo zuri berria da.",
+      "The white wine is new.",
+      "<"
+    ],
+    [
+      "Nere aitaren semea Inglateran bizi da.",
+      "My father’s son lives in England.",
+      "<"
+    ],
+    [
+      "Nere familiak etxe berria erosi du.",
+      "My family has bought a new house.",
+      "<"
+    ]
+  ],
+  "response": [
+    [
+      1,
+      "The girl knows the problem."
+    ],
+    [
+      1,
+      "The woman's house is in Europe."
+    ],
+    [
+      1,
+      "I have read my father's new book."
+    ],
+    [
+      1,
+      "I will go to the hotel with my father."
+    ],
+    [
+      0,
+      "Nahi dut ardo zuri."
+    ],
+    [
+      0,
+      "Ardo zuri berria da."
+    ],
+    [
+      0,
+      "Nire aitaren semea Ingalateran bizi da."
+    ],
+    [
+      0,
+      "Nire familia etxe berria erosi du."
+    ]
+  ]
+}

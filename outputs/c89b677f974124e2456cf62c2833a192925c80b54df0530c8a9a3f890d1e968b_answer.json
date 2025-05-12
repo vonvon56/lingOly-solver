@@ -1,0 +1,73 @@
+{
+  "source_language": "Euskara",
+  "target_language": "English",
+  "meta": "",
+  "train": "Emakumeak gizona ikusi du. -> The woman has seen the man.\nZuk umea ikusi duzu kalean. -> You have seen the child in the street.\nNon ikusi duzu umea? -> Where have you seen the child?\nNork ikusi du umea kalean? -> Who has seen the child in the street?’\nUmeak ez du gizona ikusi. -> The child has not seen the man.\nEmakumeak liburua irakurri du. -> The woman has read the book.\nUmea etorri da. -> The child has (come/arrived).\nUmea kalean erori da. -> The child has fallen in the street.\nIgela agertu da. -> The frog has appeared.\nGizonak umeari liburua eman dio. -> The man has given the book to the child.\nIrakasleak umeari liburua irakurrarazi dio. -> The teacher has made the child read the book.",
+  "test": [
+    [
+      "Emakumea etorri da.",
+      "The woman has come.",
+      "<"
+    ],
+    [
+      "Gizonak emakumea ikusi du.",
+      "The man has seen the woman.",
+      "<"
+    ],
+    [
+      "Liburua ez da etorri.",
+      "The book has not arrived.",
+      "<"
+    ],
+    [
+      "Nork ikusi du gizona?",
+      "Who has seen the woman?",
+      ">"
+    ],
+    [
+      "Nor agertu da kalean?",
+      "Who has fallen in the street?",
+      ">"
+    ],
+    [
+      "Emakumeak umeari etorrarazi dio.",
+      "The woman has made the child come.",
+      ">"
+    ],
+    [
+      "Umeak emakumeari igela eman dio.",
+      "The child has given the frog to the woman.",
+      "<"
+    ]
+  ],
+  "response": [
+    [
+      0,
+      "Emakumeak etorri da."
+    ],
+    [
+      0,
+      "Gizonak emakumea ikusi du."
+    ],
+    [
+      0,
+      "Liburua ez da etorri."
+    ],
+    [
+      1,
+      "Who has seen the man?"
+    ],
+    [
+      1,
+      "Who has appeared in the street?"
+    ],
+    [
+      1,
+      "The woman has made the child come."
+    ],
+    [
+      0,
+      "Umeak igelari emana dio emakumea."
+    ]
+  ]
+}

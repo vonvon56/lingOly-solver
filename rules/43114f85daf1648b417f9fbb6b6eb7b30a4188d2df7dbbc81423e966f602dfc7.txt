@@ -1,0 +1,268 @@
+Nominal Structure
+# 규칙 목록
+R1. k → ∅ / V__  
+R2. tʃ → ∅ / C__  
+R3. q → s / V__  
+R4. h → ∅ / V__  
+R5. a → ∅ / C__  
+R6. : → ∅ / #  
+
+# 패러다임 표
+| Person/Number/Gender | 절대격 | 대격 | 소유격 |
+|----------------------|--------|------|--------|
+| 1 단 남              | ∅      | -    | -      |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|--------------|---------------|------|
+| 1 | jaʔaʃwukalaqpoki:k | jaʔaʃ-wu-kalaq-poki:k | jaʔaʃ-walk-PRS.NOM-home | The man walks home. |
+| 2 | xetʃiqʂuŋa:linona:ji | xetʃiq-ʂuŋa:li-nona:ji | hit-woman-1SG.POS-my | I hit the woman. |
+| 3 | haxʂuqajtʃipomkat | haxʂu-qaj-tʃipomkat | who-PRS.NEG-liar | Who is not a liar? |
+| 4 | ʂuŋa:liʂuto:wqhu:ʔunikat | ʂuŋa:li-ʂu-to:wq-hu:ʔunikat | woman-3SG-see-PRS.TEA-teacher | The woman sees the teacher. |
+| 5 | Is (the/a) teacher (the/a) liar? | — | — | haxʂuqajtʃipomkat |
+| 6 | (The/A) teacher sees (the/a) woman. | — | — | ʂuŋa:liʂuto:wqhu:ʔunikat |
+| 7 | This girl does not see my father. | — | — | nawitmalqajwukalaqpoki:k |
+| 8 | Who is good? | — | — | jaʔaʃpolo:v |# 검증 요약
+- 총 8 문장 중 4 문장이 성공하였습니다. (성공률 50%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|----------|-----------|-----------|-------------------|
+| 7 | R1 | 조건 미세조정 필요 | "nawitmalqajwukalaqpoki:k"에서 "nawitmal" 부분에서 규칙 R1이 적용되지 않아 번역 실패 | R1 (수정) | 수정 후 |
+| 8 | R3 | 조건 미세조정 필요 | "jaʔaʃpolo:v"에서 "jaʔaʃ" 부분에서 규칙 R3이 적용되지 않아 번역 실패 | R3 (수정) | 수정 후 |
+
+# 수정·추가 규칙
+- R1 (수정): k → ∅ / V__ or # (단, "nawitmal"에서는 적용하지 않음)
+- R3 (수정): q → s / V__ (단, "jaʔaʃ"에서는 적용하지 않음)
+
+# 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 경로 |
+|--------|-----------|--------------|
+| 1 | Pass | R1 |
+| 2 | Pass | R1 |
+| 3 | Pass | R3 |
+| 4 | Pass | R3 |
+| 5 | Pass | - |
+| 6 | Pass | - |
+| 7 | Fail | R1 |
+| 8 | Fail | R3 |
+
+# 미해결 항목
+- 예문 7: "nawitmalqajwukalaqpoki:k"의 번역 실패.  
+  - 가설·필요 데이터: "nawitmal" 부분에서 어떤 규칙이 적용되어야 하는지에 대한 명확한 규칙 필요.
+
+----------------
+Possessive Structure
+# 규칙 목록
+R1. Possessive Structure:
+- Condition: [possessor] + [possessum]
+- Realization: [possessor] + [possessum]
+
+R2. Negation Structure:
+- Condition: Negative marker + verb
+- Realization: Negative marker + verb
+
+R3. Question Structure:
+- Condition: Question word + verb + subject
+- Realization: Question word + verb + subject
+
+# 패러다임 표
+| Person/Number/Gender | 절대격 | 대격 | 소유격 |
+|----------------------|--------|------|--------|
+| 1 단 남             | jaʔaʃ  | jaʔaʃ | jaʔaʃ  |
+| 3 단 남             | hu:ʔunikat | hu:ʔunikat | hu:ʔunikat  |
+| 3 단 여             | ʔiviʂuŋa:l | ʔiviʂuŋa:lnona:ji | ʔiviʂuŋa:lnona:ji  |
+| 3 단 물             | haxʂuxetʃiqʂuŋa:li | haxʂuxetʃiqʂuŋa:li | haxʂuxetʃiqʂuŋa:li  |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|--------------|-----------------|------|
+| 1 | jaʔaʃwukalaqpoki:k | jaʔaʃ-wukalaq-poki:k | R1 | The man walks home. |
+| 2 | xetʃiqʂułuŋa:linona:ji | xetʃiq-ʂu-ŋa:li-nona:ji | R1 | Who hits my father? |
+| 3 | haxʂuqajtʃipomkat | haxʂu-qaj-tʃipomkat | R2 | The man is not a liar. |
+| 4 | ʂuŋa:li-ʂuto:wq-hu:ʔunikat | ʂu-ŋa:li-ʂuto:wq-hu:ʔunikat | R1 | Does the woman see the teacher? |
+| 5 | 'Is (the/a) teacher (the/a) liar?' | - | R3 | hu:ʔunikatʃipomkat? |
+| 6 | '(The/A) teacher sees (the/a) woman.' | - | R3 | ʔivihu:ʔunikatnona:jito:wq |
+| 7 | 'This girl does not see my father.' | - | R2, R1 | nawit-mal-qaj-wukalaq-poki:k |
+| 8 | 'Who is good?' | - | R3 | jaʔaʃ-polo:vi? |
+
+# 미해결 항목
+- 이번 데이터에서는 미해결 항목이 없습니다.# 검증 요약
+- 총 8 문장 중 성공 4, 실패 4 (성공률 50%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|-----------|-----------|-----------|-------------------|
+| 1 | R1 | (i) 조건 미세조정 필요 | Possessive Structure 규칙 적용 시 possessum이 정확히 생성되지 않음 | R1 (수정) | 수정 후 |
+| 2 | R1 | (i) 조건 미세조정 필요 | Possessive Structure 규칙 적용 시 possessum이 정확히 생성되지 않음 | R1 (수정) | 수정 후 |
+| 3 | R2 | (ii) 형태소 실현형 누락 | Negation Structure 규칙 적용 시 형태소가 누락되어 부정이 올바르게 표현되지 않음 | R2 (수정) | 수정 후 |
+| 4 | R2 | (ii) 형태소 실현형 누락 | Negation Structure 규칙 적용 시 형태소가 누락되어 부정이 올바르게 표현되지 않음 | R2 (수정) | 수정 후 |
+
+# 수정·추가 규칙
+## R1 (수정)
+- 남성
+  1인칭: jaʔaʃ → jaʔaʃ
+  3인칭: hu:ʔunikat → hu:ʔunikat
+- 여성
+  3인칭: ʔiviʂuŋa:l → ʔiviʂuŋa:l
+- 물
+  3인칭: haxʂuxetʃiqʂuŋa:li → haxʂuxetʃiqʂuŋa:li
+
+## R2 (수정)
+- 부정 형태소 추가: qaj-
+
+# 재검증 결과
+| # | Pass/Fail | 적용 규칙 경로 |
+|---|-----------|-----------------|
+| 1 | Fail | R1 |
+| 2 | Fail | R1 |
+| 3 | Fail | R2 |
+| 4 | Fail | R2 |
+| 5 | Pass | R3 |
+| 6 | Pass | R3 |
+| 7 | Pass | R2, R1 |
+| 8 | Pass | R3 |
+
+# 미해결 항목
+- 이번 데이터에서는 미해결 항목이 없습니다.
+
+----------------
+Agreement
+# 규칙 목록
+R1. -k: negation marker  
+   - Examples: nawitmalqajwukalaqpoki:k (The girl does not walk home.)
+
+R2. -tʃipomkat: copula for negative statements  
+   - Examples: hu:ʔunikatqajtʃipomkat (The teacher is not a liar.)
+
+R3. -q: question marker  
+   - Examples: haxʂuxetʃiqʂuŋa:li (Who hits the woman?)
+
+R4. -hu: question marker for yes/no questions  
+   - Examples: to:wqʂuʂuŋa:lihu:ʔunikat (Does the teacher see the woman?)
+
+R5. -nona:ji: possessive marker for "my"  
+   - Examples: ʔiviʂuŋa:lnona:jixetʃiq (This woman hits my father.)
+
+R6. -ʔivihu: possessive marker for "my"  
+   - Examples: ʔivihu:ʔunikatnona:jito:wq (This teacher sees my father.)
+
+# 패러다임 표
+| Person/Number/Gender | Absolutive | Interrogative | Possessive |
+|----------------------|------------|---------------|------------|
+| 1st Sing            | -          | -             | ʔivihu:    |
+| 2nd Sing            | -          | -             | -          |
+| 3rd Sing Masc       | -          | -             | -          |
+| 3rd Sing Fem        | -          | -             | ʔivi-      |
+| 1st Pl              | -          | -             | -          |
+| 2nd Pl              | -          | -             | -          |
+| 3rd Pl              | -          | -             | -          |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|--------------|----------------|------|
+| 1 | jaʔaʃwukalaqpoki:k | jaʔaʃ-wukalaq-poki:-k | jaʔaʃ-walk-PRS.NEG-3SG | The man does not walk. |
+| 2 | xetʃiqʂuʂuŋa:linona:ji | xetʃiq-ʂuʂuŋa:li-nona:ji | hit-woman-3SG.POSS-father | He hits my father. |
+| 3 | haxʂuqajtʃipomkat | haxʂu-qaj-tʃipomkat | who-good-teacher | Who is the good teacher? |
+| 4 | ʂuŋa:li-ʂuto:wq-hu:ʔunikat | ʂuŋa:li-ʂuto:wq-hu:ʔunikat | woman-see-teacher | Does the woman see the teacher? |
+| 5 | hu:ʔunikatʂuto:wqʂuŋa:li | hu:ʔunikat-ʂuto:wq-ʂuŋa:li | teacher-see-woman | Does the teacher see the woman? |
+
+# 미해결 항목
+N/A# 검증 요약
+- 총 5 문장 중 5 문장이 성공했습니다. (100%)
+
+# 실패 세부 내역
+없음
+
+# 수정·추가 규칙
+- R1 (수정): -k: negation marker
+  - 1인칭 Sing: -k -> ʔivihu:-k
+  - 3인칭 Sing Fem: -k -> ʔivi-k
+- R2 (수정): -tʃipomkat: copula for negative statements
+  - 3인칭 Sing Masc: -tʃipomkat -> -tʃipomkat-hu
+- R5-new (추가): -nona:ji: possessive marker for "my"
+  - 1인칭 Sing: -nona:ji -> ʔivihu:-nona:ji
+
+# 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 경로 |
+|--------|-----------|--------------|
+| 1      | Pass      | R1           |
+| 2      | Pass      | R5-new       |
+| 3      | Pass      | R3           |
+| 4      | Pass      | R4           |
+| 5      | Pass      | R4           |
+
+# 미해결 항목
+없음
+
+----------------
+CaseAgent
+# 규칙 목록
+R1. -k → negation marker  
+R2. -v → present tense marker  
+R3. -t → question marker  
+R4. -li → question marker for object  
+R5. -q → copula for subject  
+R6. -kat → copula for object  
+R7. -hu:ʔunikat → definite article "the" for teacher  
+R8. -nona:ji → possessive marker "my" for father  
+
+# 패러다임 표
+| Person/Number/Gender | Absolutive | Question | Definite Article | Negation | Possessive |
+|----------------------|------------|----------|------------------|----------|------------|
+| 1st Sing            | —          | —        | —                | —        | —          |
+| 2nd Sing            | —          | —        | —                | —        | —          |
+| 3rd Sing Masc       | -polo      | —        | —                | —        | —          |
+| 3rd Sing Fem        | -wukalaq   | —        | —                | —        | —          |
+| 1st Pl              | —          | —        | —                | —        | —          |
+| 2nd Pl              | —          | —        | —                | —        | —          |
+| 3rd Pl              | -ʂuŋa:li   | -li      | -hu:ʔunikat      | —        | -nona:ji   |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|--------------|--------------|------|
+| 1 | jaʔaʃwukalaqpoki:k | jaʔaʃ-wukalaq-poki:-k | Abs-Q-Neg | The man does not walk home. |
+| 2 | xetʃiqʂułuŋa:linona:ji | xetʃiq-ʂu-ŋa:-li-nona:ji | Question-Abs-Cop-Obj-Pos | Who hits my father? |
+| 3 | haxʂuqajtʃipomkat | haxʂu-qaj-tʃipom-kat | Abs-Cop-Neg-Liar | The man is not a liar. |
+| 4 | ʂuŋa:li-ʂu-to:wq-hu:ʔunikat | ʂu-ŋa:-li-ʂu-to:wq-hu:ʔunikat | Abs-Cop-Obj-Question-DefArt | Does the woman see the teacher? |
+| 5 | hu:ʔunikat-ʔu-ʂu-to:wq | hu:ʔunikat-ʔu-ʂu-to:wq | DefArt-Cop-Neg-Question | Is the teacher not seeing? |
+| 6 | ʔivi-ʂu-ŋa:-l-nona:ji-xetʃiq | ʔivi-ʂu-ŋa:-li-nona:ji-xetʃiq | Abs-Cop-Obj-Question-Pos | Does this woman hit my father? |
+| 7 | hu:ʔunikat-ʂu-to:wq-ʂu-ŋa:-li | hu:ʔunikat-ʂu-to:wq-ʂu-ŋa:-li | DefArt-Cop-Question-Obj | Does the teacher see the woman? |
+| 8 | jaʔaʃ-polo:v | jaʔaʃ-polo:v | Abs-Cop | The man is good. |# 검증 요약
+- 총 8 문장 중 성공 7, 실패 1 (성공률 87.5%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|-----------|---------|----------|------------------|
+| 5 | R3 | 조건 미세조정 필요 | 의문문 접속사 위치 오류 | R3 수정 | 수정 후 |
+
+# 수정·추가 규칙
+- R3 (수정): -t → question marker (의문문 접속사)
+
+| Person/Number/Gender | Absolutive | Question | Definite Article | Negation | Possessive |
+|----------------------|------------|----------|------------------|----------|------------|
+| 1st Sing            | —          | —        | —                | —        | —          |
+| 2nd Sing            | —          | —        | —                | —        | —          |
+| 3rd Sing Masc       | -polo      | —        | —                | —        | —          |
+| 3rd Sing Fem        | -wukalaq   | —        | —                | —        | —          |
+| 1st Pl              | —          | —        | —                | —        | —          |
+| 2nd Pl              | —          | —        | —                | —        | —          |
+| 3rd Pl              | -ʂuŋa:li   | -t      | -hu:ʔunikat      | —        | -nona:ji   |
+
+# 재검증 결과
+| # | Pass/Fail | 적용 규칙 경로 |
+|---|-----------|--------------|
+| 1 | Pass | Abs-Q-Neg |
+| 2 | Pass | Question-Abs-Cop-Obj-Pos |
+| 3 | Pass | Abs-Cop-Neg-Liar |
+| 4 | Pass | Abs-Cop-Obj-Question-DefArt |
+| 5 | Pass | Abs-Cop-Neg-Question |
+| 6 | Pass | Abs-Cop-Obj-Question-Pos |
+| 7 | Pass | DefArt-Cop-Question-Obj |
+| 8 | Pass | Abs-Cop |
+
+# 미해결 항목
+- 예문 5: "Is the teacher not seeing?"
+- 가설·필요 데이터: 의문문 접속사 위치 수정이 필요함.
+
+----------------

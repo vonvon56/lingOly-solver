@@ -1,0 +1,82 @@
+{
+  "source_language": "Luiseño",
+  "target_language": "English",
+  "meta": "",
+  "train": "nawitmalqajwukalaqpoki:k -> The girl does not walk home.\njaʔaʃpolo:v -> The man is good.\nhu:ʔunikatqajtʃipomkat -> The teacher is not a liar.\nhaxʂuxetʃiqʂuŋa:li -> Who hits the woman?\njaʔaʃwukalaq -> The man walks.\nto:wqʂuʂuŋa:lihu:ʔunikat -> Does the teacher see the woman?\nʔiviʂuŋa:lnona:jixetʃiq -> This woman hits my father.\nnona:jiʂuxetʃiqʔiviʂuŋa:l -> Does this woman hit my father?\nʔiviʂuŋa:lxetʃiqnona:ji -> This woman hits my father.\nhu:ʔunikattʃipomkat -> The teacher is a liar.\nʔivihu:ʔunikatnona:jito:wq -> This teacher sees my father.\nhu:ʔunikatʂuto:wqʂuŋa:li -> Does the teacher see the woman?",
+  "test": [
+    [
+      "jaʔaʃwukalaqpoki:k",
+      "The man walks home.",
+      ">"
+    ],
+    [
+      "xetʃiqʂuʂuŋa:linona:ji",
+      "Does the woman hit my father?/Does my father see the woman?",
+      ">"
+    ],
+    [
+      "haxʂuqajtʃipomkat",
+      "Who is not the liar?",
+      ">"
+    ],
+    [
+      "ʂuŋa:liʂuto:wqhu:ʔunikat",
+      "Does the teacher see the woman?",
+      ">"
+    ],
+    [
+      "hu:ʔunikatʂutʃipomkat",
+      "Is (the/a) teacher (the/a) liar?",
+      "<"
+    ],
+    [
+      "ʂuŋa:lito:wqhu:ʔunikat",
+      "(The/A) teacher sees (the/a) woman.",
+      "<"
+    ],
+    [
+      "ʔivinawitmalqajnona:jito:wq",
+      "This girl does not see my father.",
+      "<"
+    ],
+    [
+      "haxʂupolo:v",
+      "Who is good?",
+      "<"
+    ]
+  ],
+  "response": [
+    [
+      1,
+      "The man walks home."
+    ],
+    [
+      1,
+      "Who hits my father?"
+    ],
+    [
+      1,
+      "The man is not a liar."
+    ],
+    [
+      1,
+      "The woman sees the teacher."
+    ],
+    [
+      0,
+      "hu:ʔunikatqajtʃipomkat"
+    ],
+    [
+      0,
+      "ʔivihu:ʔunikatnona:jito:wq"
+    ],
+    [
+      0,
+      "nawitmalqajwukalaqpoki:k"
+    ],
+    [
+      0,
+      "jaʔaʃpolo:vi"
+    ]
+  ]
+}

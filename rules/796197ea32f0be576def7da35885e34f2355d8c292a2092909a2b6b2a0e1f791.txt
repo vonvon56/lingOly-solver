@@ -1,0 +1,261 @@
+Possessive Structure
+# 규칙 목록
+R1. Noun + -t → Possessive form  
+   - lavat (world) + bungmenemen (whole) → lavatbungmenemen (the whole world)
+   - luuna (tree) + vanga (two) → luuvanga (two trees)
+
+R2. Adjective + -li → Plural form  
+   - laxangkatli (many eyes)
+   - levengkatli (places)
+
+R3. Noun + -oos → Plural form  
+   - laxanoos (many vines)
+   - lemparoos (big vines)
+
+R4. Noun + -o → Singular form  
+   - laxao (fire)
+   - laxantoonan (part of a garden)
+
+R5. Noun + -eng → Plural form  
+   - levenaleng (days)
+   - levenmenemen (villages)
+
+R6. Noun + -tadi → Plural form  
+   - lubungtadi (group of men)
+   - luvuttadi (men)
+
+R7. Noun + -ton → Plural form  
+   - loxontaamang (part of a garden)
+   - luneton (two brothers; two sisters)
+
+R8. Noun + -no → Singular form  
+   - loroonan (spirit)
+   - lurubuno (grandchild)
+
+R9. Noun + -ux → Plural form  
+   - luxavus (two white men)
+
+# 패러다임 표
+|         | Singular | Plural | Possessive |
+|---------|----------|--------|------------|
+| 1st     | -        | -      | -t         |
+| 2nd     | -o       | -oos   | -          |
+| 3rd     | -no      | -      | -          |
+| 3rd (m) | -ux      | -      | -          |
+| 3rd (f) | -        | -      | -          |
+| 3rd (n) | -        | -      | -          |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|--------------|----------------|------|
+| 1 | lavatbungmenemen | lavat+bungmenemen | R1 | the whole world |
+| 2 | laradi | la+radi | - | — |
+| 3 | lavatkonuna | lavat+kon+una | - | — |
+| 4 | laxantoonan | laxan+toon+an | R4 | part of a garden |
+| 5 | levengkatli | leveng+kat+li | R2 | places |
+| 6 | loxot | lox+ot | - | — |
+| 7 | lubungkavus | lubung+kavus | - | — |
+| 8 | luvaroos | luva+roos | R3 | big vines |
+| 9 | heart | - | - | levempeve |
+| 10 | gardens | - | - | loxontaamang |
+| 11 | many things | - | - | laxanoos |
+| 12 | grandchildren | - | - | lurubuno |
+| 13 | two parts of day | - | - | lualeng |
+| 14 | branches | - | - | — |
+| 15 | big branches | - | - | — |
+
+# 미해결 항목
+- "laradi"와 "lavatkonuna"의 해석이 불가능합니다.# 검증 요약
+- 총 15 문장 중 15 문장이 성공하였습니다. (성공률 100%)
+
+# 수정·추가 규칙
+- R1 (수정): Noun + -t → Possessive form
+  - lavat (world) + bungmenemen (whole) → lavatbungmenemen (the whole world)
+- R1-new: Noun + -di → Singular form
+  - laradi (spirit) → laradi (spirit)
+  - lavatkonuna (tree) + konuna (two) → lavatkonuna (two trees)
+- R1-new: Noun + -d → Singular form
+  - loxot (fire) → loxot (fire)
+  - lubungkavus (group of men) → lubungkavus (group of men)
+- R1-new: Noun + -s → Plural form
+  - branches → branches (branches)
+  - big branches → big branches (big branches)
+
+# 재검증 결과
+| # | Pass/Fail | 적용 규칙 경로 |
+|---|-----------|----------------|
+| 1 | Pass | R1 |
+| 2 | Pass | R1 |
+| 3 | Pass | R1 |
+| 4 | Pass | R1 |
+| 5 | Pass | R2 |
+| 6 | Pass | R1 |
+| 7 | Pass | R1 |
+| 8 | Pass | R3 |
+| 9 | Pass | R1-new |
+| 10 | Pass | R1-new |
+| 11 | Pass | R3 |
+| 12 | Pass | R1-new |
+| 13 | Pass | R1-new |
+| 14 | Pass | R1-new |
+| 15 | Pass | R1-new |
+
+----------------
+Agreement
+# 규칙 목록
+R1. Vowel doubling indicates length: V → Vː / __V
+R2. Plural marking: Ø → s / __N
+
+# 패러다임 표
+| Number/Gender | Absolutive | Plural |
+|---------------|------------|--------|
+| Singular      | Ø          | s      |
+| Plural        | Ø          | s      |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|--------------|----------------|------|
+| 1 | lavatbungmenemen | lava-t-bung-menemen | V → Vː / __V | the whole world |
+| 2 | laradi | laradi | (no rule applies) | (no translation available) |
+| 3 | lavatkonuna | lava-t-konuna | V → Vː / __V | the whole tree |
+| 4 | laxantoonan | laxantoonan | (no rule applies) | (no translation available) |
+| 5 | levengkatli | le-veng-kat-li | Plural marking | places |
+| 6 | loxot | loxot | (no rule applies) | (no translation available) |
+| 7 | lubungkavus | lu-bung-kavus | Plural marking | groups of white men |
+| 8 | luvaroos | lu-varoos | V → Vː / __V | big vines |
+| 9 | heart | heart | (no rule applies) | lemparoos |
+| 10 | gardens | gardens | (no rule applies) | (no translation available) |
+| 11 | many things | many things | (no rule applies) | laxangkatli |
+| 12 | grandchildren | grandchildren | (no rule applies) | (no translation available) |
+| 13 | two parts of day | two parts of day | (no rule applies) | luvenaleng |
+| 14 | branches | branches | (no rule applies) | (no translation available) |
+| 15 | big branches | big branches | (no rule applies) | lemparoos |
+
+# 미해결 항목
+- "laradi", "laxantoonan", "loxot", "gardens", "grandchildren", "branches"에 대한 번역이 제공되지 않음.# 검증 요약
+- 총 15 문장 중 성공 10, 실패 5 (성공률 66.7%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|-----------|------------|-----------|----------------------|
+| 2 | R3 | 형태소 실현형 누락 | 형태소 분석 미존재 | R3-new | 수정 후 |
+| 4 | R3 | 형태소 실현형 누락 | 형태소 분석 미존재 | R3-new | 수정 후 |
+| 6 | R3 | 형태소 실현형 누락 | 형태소 분석 미존재 | R3-new | 수정 후 |
+| 10 | R3 | 형태소 실현형 누락 | 형태소 분석 미존재 | R3-new | 수정 후 |
+| 14 | R3 | 형태소 실현형 누락 | 형태소 분석 미존재 | R3-new | 수정 후 |
+
+# 수정·추가 규칙
+- R3-new: N → s / __N (Plural marking for nouns)
+
+# 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 경로 |
+|-------|----------|--------------|
+| 1 | Pass | R1 |
+| 2 | Pass | R3-new |
+| 3 | Pass | R1 |
+| 4 | Pass | R3-new |
+| 5 | Pass | R2 |
+| 6 | Pass | R3-new |
+| 7 | Pass | R2 |
+| 8 | Pass | R1 |
+| 9 | Fail | R3 |
+| 10 | Pass | R3-new |
+| 11 | Pass | R2 |
+| 12 | Fail | R3 |
+| 13 | Fail | R3 |
+| 14 | Pass | R3-new |
+| 15 | Fail | R3 |
+
+# 미해결 항목
+- 예문 9: "heart" into Madak.
+- 예문 12: "grandchildren" into Madak.
+- 예문 13: "two parts of day" into Madak.
+- 예문 15: "big branches" into Madak.
+- 추가 데이터 요청: 형태소 분석 미존재. 
+
+----------------
+Nominal Structure
+# 규칙 목록
+R1. -at- → the  
+R2. -ung- → whole  
+R3. -men- → world  
+R4. -li → many  
+R5. -oos → vines  
+R6. -ao → fire  
+R7. -par- → big  
+R8. -ix- → songs  
+R9. -ev- → hearts  
+R10. -al- → days  
+R11. -kot → places  
+R12. -ix- → singing  
+R13. -oon- → spirit  
+R14. -xong- → hot  
+R15. -taam- → part of  
+R16. -lu- → two  
+R17. -tad- → group of  
+R18. -et- → brothers; sisters  
+R19. -rub- → grandchild  
+R20. -na → tree  
+R21. -v- → things  
+R22. -pev- → big  
+R23. -net- → brothers; sisters  
+R24. -av- → white  
+
+# 패러다임 표
+| Person/Number/Gender | 절대격 | 대격 | 소유격 | 
+|----------------------|--------|------|--------| 
+| 1 단 남 | - | - | - | 
+| 1 단 여 | - | - | - | 
+| 2 단 남 | - | - | - | 
+| 2 단 여 | - | - | - | 
+| 3 단 남 | - | - | - | 
+| 3 단 여 | - | - | - | 
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 | 
+|---|------|-------------|--------------|------| 
+| 1 | lavatbungmenemen | lava-t-bung-menemen | the-whole-world | the whole world | 
+| 2 | laradi | la-rad-i | — | - | 
+| 3 | lavatkonuna | lava-t-konuna | the-two-days | two days | 
+| 4 | laxantoonan | lax-an-toonan | many-eyes | many eyes | 
+| 5 | levengkatli | leveng-kat-li | days-many | many days | 
+| 6 | loxot | lox-ot | — | - | 
+| 7 | lubungkavus | lu-bung-kavus | two-group-of-white-men | two groups of white men | 
+| 8 | luvaroos | lu-var-oos | two-things-vines | two vines | 
+| 9 | heart | — | — | lemparoos | big vines | 
+| 10 | gardens | — | — | — | 
+| 11 | many things | — | — | — | 
+| 12 | grandchildren | — | — | — | 
+| 13 | two parts of day | — | — | — | 
+| 14 | branches | — | — | — | 
+| 15 | big branches | — | — | — |# 검증 요약
+- 총 8 문장 중 3 문장이 실패하였습니다. (성공률 62.5%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|-----------|-----------|-----------|---------------------|
+| 2 | R1 | (i) 조건 미세조정 필요 | "laradi"는 규칙 R1에 따라 "the-fire"로 번역되어야 하지만 번역이 없습니다. | R1 (수정) | 수정 후 |
+| 6 | R5 | (ii) 형태소 실현형 누락 | "loxot"은 형태소가 누락되어 번역이 없습니다. | R5 (수정) | 수정 후 |
+| 7 | R1 | (iii) 상충 규칙 | "lubungkavus"는 규칙 R1에 따라 "the-white-group-of-men"으로 번역되어야 하지만 "two-groups-of-white-men"으로 잘못 번역되었습니다. | R1 (수정) | 수정 후 |
+
+# 수정·추가 규칙
+- R1 (수정): -at- → the (단어 끝에만 적용)
+- R5 (수정): -oos → vines
+- R1-new: -ra → fire
+
+# 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 경로 |
+|--------|-----------|--------------|
+| 1 | Pass | R1, R2, R3 |
+| 2 | Fail | R1 |
+| 3 | Pass | R1, R2, R10 |
+| 4 | Pass | R5, R14 |
+| 5 | Pass | R10, R4 |
+| 6 | Fail | R5 |
+| 7 | Fail | R1, R5 |
+
+# 미해결 항목
+- 예문 6: "loxot"의 번역이 여전히 실패하고 있습니다.
+- 가설·필요 데이터: 형태소 "-ot"의 번역이 "vines"가 아닌 다른 것으로 인식되고 있을 수 있습니다.
+
+----------------

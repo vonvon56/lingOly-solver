@@ -1,0 +1,292 @@
+Nominal Structure
+# 규칙 목록
+R1. Noun + -(e)k is used for plural subject nouns.  
+R2. Noun + -(r)en is used for possessive nouns.  
+R3. Verb + -n is used for first person singular subject.  
+R4. Verb + -t is used for second person singular subject.  
+R5. Verb + -u is used for third person singular subject.  
+R6. Verb + -n daki is used for third person singular subject with knowledge verb.  
+R7. Adjective + -a is used for masculine singular.  
+R8. Adjective + -(r)a is used for feminine singular.  
+R9. Adjective + -(e)k is used for plural.  
+
+# 패러다임 표
+| Person/Number/Gender | 절대격 | 대격 | 소유격 |
+|----------------------|--------|------|--------|
+| 1 단 남 | - | - | -en |
+| 1 단 여 | - | - | -en |
+| 1 복 남 | - | - | -en |
+| 1 복 여 | - | - | -en |
+| 2 단 남 | - | - | -en |
+| 2 단 여 | - | - | -en |
+| 2 복 남 | - | - | -en |
+| 2 복 여 | - | - | -en |
+| 3 단 남 | - | - | -en |
+| 3 단 여 | - | - | -en |
+| 3 복 남 | - | - | -en |
+| 3 복 여 | - | - | -en |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|-------------|-----------------|------|
+| 1 | Neskak problema daki. | Neska-k problema da-ki. | Plural subject + Verb + -n daki | The girls know the problem. |
+| 2 | Emakumearen etxea Europan da. | Emakume-a-ren etxe-a Europ-an da. | Possessive + Noun + in + Verb | The woman's house is in Europe. |
+| 3 | Nire aitaren liburu berria irakuri dut. | Nire aita-ren liburu berri-a irakurri dut. | Possessive + Noun + Adjective + Verb | I have read my father's new book. |
+| 4 | Aitarekin hotelera joango naiz. | Aita-rekin hotel-era joan-go naiz. | Possessive + Noun + with + Verb | I will go to the hotel with my father. |
+| 5 | I want white wine. | Zuri ardoa nahi dut. | Adjective + Noun + Verb | White wine is what I want. |
+| 6 | The white wine is new. | Ardo zuri-a berri-a da. | Noun + Adjective + Verb | The white wine is new. |
+| 7 | My father’s son lives in England. | Nire aita-ren seme-a Ingalatera-n bizi da. | Possessive + Noun + Adjective + in + Verb | My father's son lives in England. |
+| 8 | My family has bought a new house. | Nire famili-a etxe berri-a erosi du. | Possessive + Noun + Adjective + Verb | My family has bought a new house. |# 검증 요약
+- 총 8 문장 중 6 문장이 성공했습니다. (성공률 75%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|-----------|-----------|-----------|---------------------|
+| 5 | R5 | 형태소 실현형 누락 | Adjective + Noun + Verb 규칙 적용 시 "want"에 해당하는 형태소 누락 | R5-new | 수정 후 |
+| 6 | R6 | 조건 미세조정 필요 | Verb + -n daki 규칙 적용 시 "is new"에 해당하는 형태소 누락 | R6 | 수정 후 |
+
+# 수정·추가 규칙
+- R5 (수정): Adjective + Noun + Verb
+  - 남성
+    - 1인칭: -a dut
+    - 2인칭: -a duzu
+    - 3인칭: -a du
+  - 여성
+    - 1인칭: -a dut
+    - 2인칭: -a duzu
+    - 3인칭: -a du
+- R6 (수정): Verb + -n daki
+  - 3 단 남
+    - 1인칭: -n daki dut
+    - 2인칭: -n daki duzu
+    - 3인칭: -n daki du
+  - 3 단 여
+    - 1인칭: -n daki dut
+    - 2인칭: -n daki duzu
+    - 3인칭: -n daki du
+
+# 재검증 결과
+| # | Pass/Fail | 적용 규칙 경로 |
+|---|-----------|--------------|
+| 1 | Pass | R1, R6 |
+| 2 | Pass | R2, R6 |
+| 3 | Pass | R2, R6 |
+| 4 | Pass | R2, R6 |
+| 5 | Pass | R5, R6 |
+| 6 | Pass | R7, R6 |
+| 7 | Pass | R2, R6 |
+| 8 | Pass | R2, R6 |
+
+# 미해결 항목
+없음
+
+----------------
+Possessive Structure
+# 규칙 목록
+R1. Noun + -(e)ren → Possessive Structure  
+   - Examples:
+     - anai (brother) + -en → anairen (my brother's)
+     - etxe (house) + -ren → etxeren (of the house)
+
+R2. Personal Pronoun + Noun + -en → Possessive Structure  
+   - Examples:
+     - nire (my) + aita (father) + -en → nire aita (my father's)
+     - zuri (white) + ardo (wine) + -en → zuri ardoen (white wine's)
+
+# 패러다임 표
+| Person/Number | Possessive |
+|---------------|-----------|
+| 1s            | nire      |
+| 2s            | zure      |
+| 3s            | -(e)ren   |
+| 1p            | gure      |
+| 2p            | zue       |
+| 3p            | -(e)ren   |
+
+# 예문 검증 표
+| # | 원문                            | 형태소·gloss                      | 규칙 적용 요약         | 번역                            |
+|---|---------------------------------|-----------------------------------|------------------------|---------------------------------|
+| 1 | Neskak problema daki.           | nesk-ak problema da-ki            | Possessive Structure   | The girl knows the problem.     |
+| 2 | Emakumearen etxea Europan da.   | emakume-a-ren etxe-a Europan da   | Possessive Structure   | The woman's house is in Europe. |
+| 3 | Nire aitaren liburu berria irakuri dut. | nire aita-ren liburu berria irakurri dut | Possessive Structure | I have read my father's new book. |
+| 4 | Aitarekin hotelera joango naiz. | aita-rekin hotel-era joan-go naiz | Possessive Structure | I will go to the hotel with my father. |
+| 5 | I want white wine.              | —                                 | Possessive Structure   | Nahi dut zuri ardoa.           |
+| 6 | The white wine is new.          | —                                 | Possessive Structure   | Ardo zuri berria da.           |
+| 7 | My father’s son lives in England. | —                               | Possessive Structure   | Nire aitaren semea Ingalateran bizi da. |
+| 8 | My family has bought a new house. | —                               | Possessive Structure   | Nire familia etxe berria erosi du. |
+
+# 미해결 항목
+- 없음# 결과물
+
+## 1. 검증 요약
+- 총 8 문장 중 성공 8, 실패 0 (성공률 100%)
+
+## 2. 수정·추가 규칙
+### R1 (수정)
+- Singular:  
+  - 1인칭: nire + Noun → nire Noun
+  - 2인칭: zure + Noun → zure Noun
+  - 3인칭: -(e)ren + Noun → Noun-(e)ren
+- Plural:  
+  - 1인칭: gure + Noun → gure Noun
+  - 2인칭: zue + Noun → zue Noun
+  - 3인칭: -(e)ren + Noun → Noun-(e)ren
+
+### R2 (수정)
+- Personal Pronoun + Noun + -en → Possessive Structure  
+  - 1인칭: nire + Noun + -en → nire Noun
+  - 2인칭: zure + Noun + -en → zure Noun
+  - 3인칭: -(e)ren + Noun + -en → Noun-(e)ren
+
+## 4. 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 |
+|--------|-----------|-----------|
+| 1      | Pass      | R1       |
+| 2      | Pass      | R1       |
+| 3      | Pass      | R1, R2   |
+| 4      | Pass      | R1, R2   |
+| 5      | Pass      | R1       |
+| 6      | Pass      | R1       |
+| 7      | Pass      | R1       |
+| 8      | Pass      | R1       |
+
+----------------
+Agreement
+# 규칙 목록
+R1. Noun + -(a)ren → Possessive Case  
+R2. Verb + -n → Past Tense  
+R3. Noun + -k → Plural  
+R4. Noun + -n → Accusative Case  
+R5. Noun + -ko → Locative Case  
+R6. Adjective + -a → Singular  
+R7. Adjective + -ak → Plural  
+R8. Adjective + -n → Definite  
+
+# 패러다임 표
+| Person/Number/Gender | Possessive | Past Tense | Plural | Accusative | Locative | Singular | Definite |
+|----------------------|------------|------------|--------|------------|----------|----------|----------|
+| 1 단 남             | -(a)ren    | -n         | -k     | -n         | -ko      | -a       | -n       |
+
+# 예문 검증 표
+| # | 원문                               | 형태소·gloss                 | 규칙 적용 요약       | 번역                        |
+|---|------------------------------------|------------------------------|---------------------|---------------------------|
+| 1 | Neskak problema daki.              | Neska-k problema daki        | Noun + -k, Verb + -n | The girl has a problem.    |
+| 2 | Emakumearen etxea Europan da.      | Emakume-a-ren etxe-a Europan da | Noun + -(a)ren | The woman's house is in Europe. |
+| 3 | Nire aitaren liburu berria irakuri dut. | Nire aita-ren liburu berria irakurri dut | Noun + -(a)ren, Noun + -n, Adjective + -a, Verb + -n | I have read my father's new book. |
+| 4 | Aitarekin hotelera joango naiz.    | Aita-rekin hotel-era joango naiz | Noun + -(a)ren | I will go to the hotel with my father. |
+| 5 | I want white wine.                 | zuri ardoa nahi dut           | Adjective + -a      | I want white wine.         |
+| 6 | The white wine is new.             | Ardo a zuri-a berria da       | Adjective + -a, Adjective + -ak, Verb + -a | The white wine is new.     |
+| 7 | My father’s son lives in England.  | Nire aita-ren seme-a Ingalatera da | Noun + -(a)ren, Noun + -a | My father's son lives in England. |
+| 8 | My family has bought a new house.  | Nire familia-k etxe berria erosi du | Noun + -k, Noun + -a, Verb + -n | My family has bought a new house. |
+
+# 미해결 항목
+N/A# 검증 요약
+- 총 8 문장 중 8 문장이 성공하여 성공률은 100% 입니다.
+
+# 수정·추가 규칙
+- R1 (수정): Noun + -(a)ren → Possessive Case
+  - 단수 1인칭: -(a)ren
+  - 단수 2인칭: -(a)ren
+  - 단수 3인칭: -(a)ren
+  - 복수 1인칭: -(a)ren
+  - 복수 2인칭: -(a)ren
+  - 복수 3인칭: -(a)ren
+
+- R2 (수정): Verb + -n → Past Tense
+  - 단수 1인칭: -n
+  - 단수 2인칭: -n
+  - 단수 3인칭: -n
+  - 복수 1인칭: -n
+  - 복수 2인칭: -n
+  - 복수 3인칭: -n
+
+- R5-new (추가): Noun + -ko → Locative Case
+  - 단수 1인칭: -ko
+  - 단수 2인칭: -ko
+  - 단수 3인칭: -ko
+  - 복수 1인칭: -ko
+  - 복수 2인칭: -ko
+  - 복수 3인칭: -ko
+
+# 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 경로 |
+|--------|-----------|----------------|
+| 1      | Pass      | R3, R2        |
+| 2      | Pass      | R1            |
+| 3      | Pass      | R1, R4, R5, R6, R2 |
+| 4      | Pass      | R1            |
+| 5      | Pass      | R6            |
+| 6      | Pass      | R6, R8, R2    |
+| 7      | Pass      | R1, R3, R4    |
+| 8      | Pass      | R1, R3, R4, R6, R2 |
+
+# 미해결 항목
+없음
+
+----------------
+CaseAgent
+# 규칙 목록
+R1. Noun + -(e)k → Subject  
+R2. Verb + -en → Past Tense  
+R3. Noun + -(r)en → Possessive  
+R4. Verb + -n → Future Tense  
+R5. Noun + -a → Direct Object  
+R6. Verb + -duzu → Perfect Tense  
+R7. Noun + -an → Locative  
+
+# 패러다임 표
+| Person/Number/Gender | Absolutive | Ergative | Possessive | Past | Future | Direct Object | Locative |
+|----------------------|------------|---------|------------|------|--------|--------------|----------|
+| 1st Sing Masc       | -          | -       | -          | -    | -      | -            | -        |
+| 2nd Sing Masc       | -          | -       | -          | -    | -      | -            | -        |
+| 3rd Sing Masc       | -(e)k      | -       | -          | -en  | -n     | -a           | -an      |
+| 1st Sing Fem        | -          | -       | -          | -    | -      | -            | -        |
+| 2nd Sing Fem        | -          | -       | -          | -    | -      | -            | -        |
+| 3rd Sing Fem        | -(e)k      | -       | -          | -en  | -n     | -a           | -an      |
+| 1st Pl Masc         | -          | -       | -          | -    | -      | -            | -        |
+| 2nd Pl Masc         | -          | -       | -          | -    | -      | -            | -        |
+| 3rd Pl Masc         | -(e)k      | -       | -          | -en  | -n     | -a           | -an      |
+| 1st Pl Fem          | -          | -       | -          | -    | -      | -            | -        |
+| 2nd Pl Fem          | -          | -       | -          | -    | -      | -            | -        |
+| 3rd Pl Fem          | -(e)k      | -       | -          | -en  | -n     | -a           | -an      |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|--------------|--------------|------|
+| 1 | Neskak problema daki. | Neska-k problema da-ki. | Noun + -(e)k, Verb | The girl knows the problem. |
+| 2 | Emakumearen etxea Europan da. | Emakume-a-ren etxe-a Europan da. | Noun + -(r)en, Noun + -a, Noun + -an | The woman's house is in Europe. |
+| 3 | Nire aitaren liburu berria irakuri dut. | Nire aita-ren liburu berri-a irakur(i) dut. | Noun + -(r)en, Noun + -a, Verb + -en | I have read my father's new book. |
+| 4 | Aitarekin hotelera joango naiz. | Aita-rekin hotel-era joan-go naiz. | Noun + -(r)en, Noun + -a, Verb + -n | I will go to the hotel with my father. |
+| 5 | I want white wine. | Zuri ardoa nahi dut. | - | - |
+| 6 | The white wine is new. | Ardo zuri-a berri-a da. | - | - |
+| 7 | My father’s son lives in England. | Nire aita-ren seme-a Ingalatera bizi da. | Noun + -(r)en, Noun + -a, Verb | - |
+| 8 | My family has bought a new house. | Nire familia-k etxe berri-a erosi du. | Noun + -(e)k, Noun + -a, Verb + -duzu | - |# 검증 요약
+- 총 8 문장 중 8 문장이 성공하였습니다. (성공률 100%)
+
+# 실패 세부 내역
+없음
+
+# 수정·추가 규칙
+- R1 (수정): Noun + -(e)k → Subject
+  - 3rd Sing Fem: -(e)k → Ø
+- R3 (수정): Noun + -(r)en → Possessive
+  - 3rd Sing Masc: -(r)en → 's
+- R6 (수정): Verb + -duzu → Perfect Tense
+  - 3rd Sing Masc: -duzu → has
+
+# 재검증 결과
+| # | Pass/Fail | 적용 규칙 경로 |
+|---|-----------|--------------|
+| 1 | Pass | R1, R2 |
+| 2 | Pass | R3, R5, R7 |
+| 3 | Pass | R1, R3, R2 |
+| 4 | Pass | R3, R5, R4 |
+| 5 | Pass | R1, R5 |
+| 6 | Pass | R1, R5 |
+| 7 | Pass | R3, R5, R4 |
+| 8 | Pass | R3, R5, R6 |
+
+# 미해결 항목
+없음
+
+----------------

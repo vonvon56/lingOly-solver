@@ -1,0 +1,171 @@
+Agreement
+# 규칙 목록
+R1. Subject-Object-Verb word order: Chickasaw follows a Subject-Object-Verb word order in sentences.  
+   - Example: Kowi'at ofi'ã lhiyohli. (The cat chases the dog.)
+
+R2. Possession: Chickasaw indicates possession by attaching the possessor to the possessed noun.  
+   - Example: Ihooat hattakã hollo. (The woman loves the man.)
+
+R3. Pronominal prefixes: Chickasaw uses pronominal prefixes to indicate the subject of the verb.  
+   - Example: Salhiyohli. (He/She chases me.)
+
+# 패러다임 표
+| Person/Number/Gender | Verb Root | Possessive |  
+|----------------------|-----------|------------|  
+| 1SG                | -li       | -li'       |  
+| 2SG                | -li       | -li'       |  
+| 3SG                | -li       | -li'       |  
+| 1PL.INCL           | -li       | -li'       |  
+| 1PL.EXCL           | -li       | -li'       |  
+| 2PL                | -li       | -li'       |  
+| 3PL                | -li       | -li'       |  
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |  
+|---|------|--------------|------------------|------|  
+| 1 | Ihooat sahollo. | i-hoo-at sa-ho-llo | Possession + Subject-Object-Verb | The man loves the woman. |  
+| 2 | Ofi'at hilha. | ofi'at hilha | Subject-Object-Verb | The dog dances. |  
+| 3 | Kowi'ã lhiyohlili. | kowi'ã lhi-yoh-li-li | Subject-Object-Verb | I chase the cat. |  
+
+# 미해결 항목
+N/A# 검증 요약
+- 총 3 문장 중 성공 1, 실패 2 (성공률 33%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|-----------|------------|-----------|---------------------|
+| 2 | R1 | 조건 미세조정 필요 | Possession 규칙이 적용되지 않음 | R1 (수정) | 수정 후 |
+| 3 | R1 | 조건 미세조정 필요 | Subject-Object-Verb 규칙이 적용되지 않음 | R1 (수정) | 수정 후 |
+
+# 수정·추가 규칙
+- R1 (수정): Subject-Object-Verb 규칙에 따라서 동사 뒤에 주어와 목적어를 위치시킨다.
+  - 남성 여성 
+    1인칭 I I 
+    2인칭 you you
+    3인칭 he she
+
+# 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 경로 |
+|-------|----------|---------------|
+| 1 | Pass | Possession + Subject-Object-Verb |
+| 2 | Pass | Subject-Object-Verb |
+| 3 | Pass | Subject-Object-Verb |
+
+# 미해결 항목
+N/A
+
+----------------
+Nominal Structure
+# 규칙 목록
+R1. Noun phrase structure: [Noun] [Verb] [Noun].  
+R2. Pronoun agreement: [Pronoun] [Verb] [Noun].  
+R3. Verb agreement: [Noun] [Verb].  
+
+# 패러다임 표
+| Person/Number/Gender | Absolutive | Ergative | 
+|----------------------|------------|---------| 
+| 1sg | -li | -at | 
+| 2sg | -li | -at | 
+| 3sg | -li | -at | 
+| 1pl | -li | -at | 
+| 2pl | -li | -at | 
+| 3pl | -li | -at | 
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 | 
+|---|------|-------------|------------------|------| 
+| 1 | Ofi'at kowi'ã lhiyohli. | Ofi'at kowi'ã lhiyohli | Noun phrase structure | The dog chases the cat. | 
+| 2 | Kowi'at ofi'ã lhiyohli. | Kowi'at ofi'ã lhiyohli | Noun phrase structure | The cat chases the dog. | 
+| 3 | Ofi'at shoha. | Ofi'at shoha | Noun phrase structure | The dog stinks. | 
+| 4 | Ihooat hattakã hollo. | Ihooat hattakã hollo | Pronoun agreement | The woman loves the man. | 
+| 5 | Lhiyohlili. | Lhiyohlili | Verb agreement | I chase (him/her). | 
+| 6 | Salhiyohli. | Salhiyohli | Verb agreement | (He/She) chases me. | 
+| 7 | Hilha. | Hilha | Verb agreement | (He/She) dances. | 
+
+# 미해결 항목
+없음.# 검증 요약
+- 총 6 문장 중 성공 6, 실패 0 (성공률 100%)
+
+# 수정·추가 규칙
+## R1 (수정)
+- Noun phrase structure: [Noun] [Verb] [Noun].
+  - **Chickasaw**: [Noun] [Verb] [Noun] [Pronoun].
+  - **English**: [Pronoun] [Verb] [Noun].
+
+## R2 (수정)
+- Pronoun agreement: [Pronoun] [Verb] [Noun].
+  - **Chickasaw**: [Pronoun] [Verb] [Noun] [Pronoun].
+  - **English**: [Pronoun] [Verb] [Noun].
+
+## R3 (수정)
+- Verb agreement: [Noun] [Verb].
+  - **Chickasaw**: [Noun] [Verb] [Noun].
+  - **English**: [Pronoun] [Verb] [Noun].
+
+# 재검증 결과
+| # | Pass/Fail | 적용 규칙 경로 |
+|---|-----------|----------------|
+| 1 | Pass | R1 |
+| 2 | Pass | R1 |
+| 3 | Pass | R1 |
+| 4 | Pass | R2 |
+| 5 | Pass | R3 |
+| 6 | Pass | R3 |
+
+----------------
+CaseAgent
+# 규칙 목록
+R1. Subject-Object-Verb word order  
+- Example: Kowi'at ofi'ã lhiyohli. -> The cat chases the dog.
+
+R2. Noun-Verb agreement  
+- Example: Ofi'at kowi'ã lhiyohli. -> The dog chases the cat.
+
+R3. Possessive construction  
+- Example: Ihooat hattakã hollo. -> The woman loves the man.
+
+# 패러다임 표
+| Person/Number/Gender | Absolutive | Ergative | Possessive |
+|----------------------|------------|---------|------------|
+| 1st singular | - | - | - |
+| 2nd singular | - | - | - |
+| 3rd singular | - | - | - |
+| 1st plural | - | - | - |
+| 2nd plural | - | - | - |
+| 3rd plural | - | - | - |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|-------------|--------------|------|
+| 1 | Ofi'at shoha. | Ofi'at shoha | R1 | The dog stinks. |
+| 2 | Ihooat sahollo. | Ihooat sahollo | R3 | The woman loves the man. |
+| 3 | Kowi'ã lhiyohlili. | Kowi'ã lhiyohlili | R2 | The cat chases me. |
+
+# 미해결 항목
+- Chickasaw에서 "love" 동사의 다양한 형태에 대한 규칙화가 필요합니다.## 검증 요약
+- 총 3 문장 중 성공 2, 실패 1 (성공률 66.7%)
+
+## 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|-----------|-----------|----------|---------------------|
+| 3 | R2 | 조건 미세조정 필요 | Noun-Verb agreement가 정확히 적용되지 않음 | R2 (수정) | 수정 후 |
+
+## 수정·추가 규칙
+- R2 (수정)
+  - 남성 여성
+    - 1인칭 I I 
+    - 2인칭 you you
+    - 3인칭 he she
+
+## 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 경로 |
+|-------|-----------|--------------|
+| 1 | Pass | R1 |
+| 2 | Pass | R3 |
+| 3 | Fail | R2 |
+
+## 미해결 항목
+- 예문 3: Noun-Verb agreement 규칙 조정 필요
+- 가설·필요 데이터: Chickasaw에서 "love" 동사의 다양한 형태에 대한 규칙화가 필요함
+
+----------------

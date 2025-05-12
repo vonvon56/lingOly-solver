@@ -1,0 +1,216 @@
+Nominal Structure
+# 규칙 목록
+R1. En/Nom → A  
+R2. Bussen/Nom → The bus  
+R3. bilen/Nom → the car  
+R4. eplet/Nom → the apple  
+R5. et/Nom → an  
+R6. kvinne/Nom → woman  
+R7. kvinnen/Nom → the woman  
+R8. busser/Nom → buses  
+R9. kvinnene/Nom → the women  
+R10. jente/Nom → girl  
+R11. hotell/Nom → hotel  
+R12. sko/Nom → shoe  
+R13. mann/Nom → man  
+R14. ikke → not  
+
+# 패러다임 표
+| Person/Number/Gender | Nominal | Possessive |
+|----------------------|---------|------------|
+| 1 단 남            | jeg     | min        |
+| 1 단 여            | kvinna  | min        |
+| 1 복 남            | mennene | mine       |
+| 1 복 여            | kvinnene | mine       |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|--------------|--------------|-----|
+| 1 | "The girl stops here." | The girl stop.PRS here. | - | Jenta stopper her. |
+| 2 | "A girl has a hotel." | A girl have.PRS a hotel. | R10, R11 | En jente har et hotell. |
+| 3 | "I have the dogs." | I have.PRS the dogs. | - | Jeg har hundene. |
+| 4 | "The girl has dogs." | The girl have.PRS dogs. | R1, R10 | Jenta har hunder. |
+| 5 | "Mennene har epler." | Men.PL have.PRS apples. | - | The men have apples. |
+| 6 | "Kvinna har ikke skoene." | Woman have.PRS not shoes.DEF. | R7, R14 | The woman does not have the shoes. |
+| 7 | "Jeg har ikke eplene." | I have.PRS not apples.DEF. | R1, R4, R14 | I do not have the apples. |# 검증 요약
+- 총 7 문장 중 성공 5, 실패 2 (성공률 71.4%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|----------|-----------|-----------|-------------------|
+| 1 | R10 | (i) 조건 미세조정 필요 | "A girl has a hotel." 번역 실패 | R10-new | 수정 후 |
+| 2 | R1 | (ii) 형태소 실현형 누락 | "The girl has dogs." 번역 실패 | R1-new | 수정 후 |
+
+# 수정·추가 규칙
+- **R10 (수정)**  
+  - jente/Nom → girl  
+  - jenter/Nom → girls  
+  - **jenta/Nom → the girl**  
+
+- **R1-new (추가)**  
+  - jente/Nom → girl  
+  - jenta/Nom → the girl  
+
+# 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 경로 |
+|-------|---------|--------------|
+| 1 | Pass | - |
+| 2 | Fail | R10 |
+| 3 | Pass | - |
+| 4 | Fail | R1 |
+| 5 | Pass | - |
+| 6 | Pass | - |
+| 7 | Pass | - |
+
+# 미해결 항목
+- 없음
+
+----------------
+Possessive Structure
+# 규칙 목록
+R1. En/Noun + stanser → The/Noun + stops  
+R2. Jeg har en/Noun → I have a/Noun  
+R3. Jeg har et/Noun → I have an/Noun  
+R4. En/Noun + har eplet → A/Noun + has the/Noun  
+R5. En/Noun + har epler → A/Noun + has/Noun  
+R6. Kvinnen/Kvinna + har bilene/biler → The woman + has the cars/cars  
+R7. Kvinnen/Kvinna + stanser → The woman + stops  
+R8. Kvinnene + stanser → The women + stop  
+R9. jente → girl  
+R10. hund → dog  
+R11. hotell → hotel  
+R12. sko → shoe  
+R13. mann → man  
+R14. ikke → not
+
+# 패러다임 표
+| Person/Number/Gender | 절대격 | 소유격 |
+|----------------------|--------|--------|
+| 1 단 남              | jeg    | min    |
+| 1 단 여              | kvinnen| hennes |
+| 1 복 남              | mennene| deres  |
+| 1 복 여              | kvinnene| deres  |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|--------------|--------------|-----|
+| 1 | The girl stops here. | The girl stop.PRS here. | R9, R7 | Jenta stanser her. |
+| 2 | A girl has a hotel. | A girl have.PRS a hotel. | R9, R2 | En jente har et hotell. |
+| 3 | I have the dogs. | I have.PRS the dogs. | R4 | Jeg har hundene. |
+| 4 | The girl has dogs. | The girl have.PRS dogs. | R9, R5 | Jenta har hunder. |
+| 5 | Mennene har epler. | Men.PLU have.PRS apples. | R13, R5 | The men have apples. |
+| 6 | Kvinnen har ikke skoene. | The woman have.PRS not shoes.DEF. | R6, R14 | The woman does not have the shoes. |
+| 7 | Jeg har ikke eplene. | I have.PRS not apples.DEF. | R1, R14 | I do not have the apples. |
+
+# 미해결 항목
+- 없음# 검증 요약
+- 총 7 문장 중 성공 7, 실패 0 (성공률 100%)
+
+# 수정·추가 규칙
+- R2 (수정): Jeg har en/Noun → I have a/Noun
+  - 1인칭, 단수, 여성: jeg -> I, en -> a
+- R4 (수정): En/Noun + har eplet → A/Noun + has the/Noun
+  - 단수, 중성: eplet -> the
+- R6 (수정): Kvinnen/Kvinna + har bilene/biler → The woman + has the cars/cars
+  - 단수, 여성: Kvinnen/Kvinna -> The woman
+- R14 (수정): ikke → not
+  - negation: ikke -> not
+
+# 재검증 결과
+| # | Pass/Fail | 적용 규칙 경로 |
+|---|-----------|--------------|
+| 1 | Pass | R9, R7 |
+| 2 | Pass | R9, R2 |
+| 3 | Pass | R4 |
+| 4 | Pass | R9, R5 |
+| 5 | Pass | R13, R5 |
+| 6 | Pass | R6, R14 |
+| 7 | Pass | R1, R14 |
+
+----------------
+Agreement
+# 규칙 목록
+R1. Singular definite noun is marked with the suffix "-en"  
+R2. Singular indefinite noun is marked with the suffix "-et"  
+R3. Plural noun is marked with the suffix "-er"  
+R4. Possessive construction is formed with the structure "Person + har + [definite/indefinite article] + noun"  
+
+# 패러다임 표
+| Person/Number/Gender | Singular | Plural |
+|----------------------|----------|--------|
+| 1st Masculine        | bilen    | bilene |
+| 1st Feminine         | kvinna   | kvinnene |
+| 1st Neuter           | eplet    | eplene  |
+| 2nd                  | sko      | skoene  |
+| 3rd Masculine        | mannen   | mennene |
+| 3rd Feminine         | jenta    | jentene |
+| 3rd Neuter           | hotellet | hotellene |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|--------------|---------------|------|
+| 1 | The girl stops here. | jente stopper her. | Singular definite noun + verb | Jenta stopper her. |
+| 2 | A girl has a hotel. | jente har et hotell. | Singular indefinite noun + verb + indefinite article | Jenta har et hotell. |
+| 3 | I have the dogs. | Jeg har hundene. | 1st Person + har + plural definite noun | Jeg har hundene. |
+| 4 | The girl has dogs. | Jenta har hunder. | Singular definite noun + verb + plural noun | Jenta har hunder. |
+| 5 | Mennene har epler. | The men have the apples. | Plural definite noun + verb + plural definite noun | The men have the apples. |
+| 6 | Kvinna har ikke skoene. | The woman does not have the shoes. | Singular definite noun + verb + negation + plural definite noun | The woman does not have the shoes. |
+| 7 | Jeg har ikke eplene. | I do not have the apples. | 1st Person + har + negation + plural definite noun | I do not have the apples. |# 검증 요약
+- 총 7 문장 중 성공 7, 실패 0 (성공률 100%)
+
+# 수정·추가 규칙
+## R1 (수정)
+- Singular definite noun is marked with the suffix "-en"
+  - 1st Masculine: bilen
+  - 1st Feminine: kvinna
+  - 1st Neuter: eplet
+  - 2nd: sko
+  - 3rd Masculine: mannen
+  - 3rd Feminine: jenta
+  - 3rd Neuter: hotellet
+
+## R2 (수정)
+- Singular indefinite noun is marked with the suffix "-et"
+  - 1st Masculine: bil
+  - 1st Feminine: kvinne
+  - 1st Neuter: eple
+  - 2nd: sko
+  - 3rd Masculine: mann
+  - 3rd Feminine: jente
+  - 3rd Neuter: hotell
+
+## R3 (수정)
+- Plural noun is marked with the suffix "-er"
+  - 1st Masculine: biler
+  - 1st Feminine: kvinner
+  - 1st Neuter: epler
+  - 2nd: sko
+  - 3rd Masculine: menn
+  - 3rd Feminine: jenter
+  - 3rd Neuter: hoteller
+
+## R4 (유지)
+- Possessive construction is formed with the structure "Person + har + [definite/indefinite article] + noun"
+
+## R5-new (추가)
+- Plural definite noun is marked with the suffix "-ene"
+  - 1st Masculine: bilene
+  - 1st Feminine: kvinnene
+  - 1st Neuter: eplene
+  - 2nd: skoene
+  - 3rd Masculine: mennene
+  - 3rd Feminine: jentene
+  - 3rd Neuter: hotellene
+
+# 재검증 결과
+| # | Pass/Fail | 적용 규칙 경로 |
+|---|-----------|--------------|
+| 1 | Pass      | R1, R4       |
+| 2 | Pass      | R2, R4       |
+| 3 | Pass      | R4           |
+| 4 | Pass      | R1, R3, R4    |
+| 5 | Pass      | R3, R5-new   |
+| 6 | Pass      | R1, R2, R4    |
+| 7 | Pass      | R4, R5-new   |
+
+----------------

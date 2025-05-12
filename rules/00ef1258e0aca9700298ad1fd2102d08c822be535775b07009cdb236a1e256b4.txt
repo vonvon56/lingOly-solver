@@ -1,0 +1,317 @@
+Nominal Structure
+# 규칙 목록
+R1. Nouns in Dyirbal inflect for gender (masculine vs. feminine) and number (singular vs. plural).  
+R2. Nouns in Dyirbal inflect for case (absolutive, ergative, genitive, etc.).  
+R3. Verbs in Dyirbal inflect for tense, aspect, mood, and agreement with the subject.  
+R4. Adjectives in Dyirbal agree with the nouns they modify in gender, number, and case.  
+
+# 패러다임 표
+| **Person/Number/Gender** | **Absolutive** | **Ergative** | **Genitive** |
+|-------------------------|---------------|-------------|-------------|
+| 1st Singular Masculine  | -             | -           | -           |
+| 1st Singular Feminine   | -             | -           | -           |
+| 2nd Singular Masculine  | -             | -           | -           |
+| 2nd Singular Feminine   | -             | -           | -           |
+| 3rd Singular Masculine  | -             | -           | -           |
+| 3rd Singular Feminine   | -             | -           | -           |
+| 1st Plural Masculine    | -             | -           | -           |
+| 1st Plural Feminine     | -             | -           | -           |
+| 2nd Plural Masculine    | -             | -           | -           |
+| 2nd Plural Feminine     | -             | -           | -           |
+| 3rd Plural Masculine    | -             | -           | -           |
+| 3rd Plural Feminine     | -             | -           | -           |
+
+# 예문 검증 표
+| **#** | **원문** | **형태소·gloss** | **규칙 적용 요약** | **번역** |
+|-------|---------|-----------------|------------------|--------|
+| 1     | balan ɲalŋga baŋgul ŋumaŋgu guniymuŋagu bambunman. | balan ɲalŋga baŋgul ŋu-maŋ-gu guni-y-mu-ŋa-gu bam-bun-man | Absolutive noun + Ergative noun + Ergative verb + Absolutive genitive + Absolutive noun | The little wallaby is looking at the dragonfly. |
+| 2     | bala diban bilmbalmuŋa baŋgun biɲȷiriɲȷu guniɲu. | bala diban bilmbal-mu-ŋa baŋgun bi-ɲȷiriɲ-ȷu guni-ɲu | Absolutive noun + Ergative noun + Ergative verb + Absolutive genitive | The aunt is bending the feather. |
+| 3     | bayi bargan baŋgul yaɽaŋgu gubimbulu-ŋunȷanaymuŋagu banȷan. | bayi bargan baŋgul yaɽaŋ-gu gubimbulu-ŋunȷanay-mu-ŋagu banȷan | Absolutive noun + Ergative noun + Ergative verb + Absolutive genitive | The sleeping possum is ignoring the loud noise. |
+| 4     | The little wallaby is looking at the dragonfly. | - | - | balan ɲalŋga baŋgul ŋumaŋgu guniymuŋagu bambunman. |
+| 5     | The aunt that is always being followed is bending the feather. | - | - | bala diban bilmbalmuŋa baŋgun biɲȷiriɲȷu guniɲu. |
+| 6     | The sleeping possum is ignoring the loud noise. | - | - | bayi bargan baŋgul yaɽaŋgu gubimbuluŋunȷanaymuŋagu banȷan. |
+| 7     | The caterpillar is searching for the man that is always carrying stones. | - | - | bayi biɲȷiriɲ biŋgun baŋgul ɲalŋgaŋgu mugurugu buɽan. |
+
+# 미해결 항목
+- Dyirbal에서 "tense, aspect, mood"와 같은 규칙에 대한 정보가 제공되지 않았습니다. 이에 대한 추가 정보가 필요합니다.# 검증 요약
+- 총 7 문장 중 성공 3, 실패 4 (성공률 42.9%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|-----------|----------|----------|---------------------|
+| 4 | R?           | 형태소 실현형 누락 | Dyirbal에서 "tense, aspect, mood" 규칙이 제공되지 않음 | R5-new | 미해결 |
+| 5 | R?           | 조건 미세조정 필요 | "that is always being followed"에 대한 형태소 처리가 필요 | R6 | 미해결 |
+| 6 | R?           | 형태소 실현형 누락 | Dyirbal에서 "tense, aspect, mood" 규칙이 제공되지 않음 | R5-new | 미해결 |
+| 7 | R?           | 조건 미세조정 필요 | "that is always carrying stones"에 대한 형태소 처리가 필요 | R6 | 미해결 |
+
+# 수정·추가 규칙
+- R5-new: Verbs in Dyirbal inflect for tense, aspect, and mood.
+  - 3rd Singular Masculine: -muŋa
+  - 3rd Singular Feminine: -muŋa
+  - 3rd Plural Masculine: -muŋa
+  - 3rd Plural Feminine: -muŋa
+
+- R6: Relative clauses in Dyirbal are formed by adding the appropriate pronoun and verb form after the noun.
+  - Relative pronoun "bi" + Verb form
+  - Example: "biŋgun" (that is always carrying)
+
+# 재검증 결과
+| **#** | **Pass/Fail** | **규칙 적용 경로** |
+|-------|--------------|-------------------|
+| 1     | Pass         | R1, R2, R3, R4     |
+| 2     | Pass         | R1, R2, R3, R4     |
+| 3     | Pass         | R1, R2, R3, R4     |
+| 4     | Fail         | R5-new             |
+| 5     | Fail         | R6                |
+| 6     | Fail         | R5-new             |
+| 7     | Fail         | R6                |
+
+# 미해결 항목
+- 예문 4: Dyirbal에서 "tense, aspect, mood"에 대한 정보가 부족하므로 추가 정보 필요.
+- 예문 5, 7: Relative clauses에 대한 형태소 처리가 필요함.
+
+# 결과물 형식
+1. **검증 요약**
+   - 총 7 문장 중 성공 3, 실패 4 (성공률 42.9%)
+
+2. **실패 세부 내역** (검증 1 회차 기준)
+   | # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+
+3. **수정·추가 규칙**
+   - R5-new (추가)  
+     - 3rd Singular Masculine: -muŋa
+     - 3rd Singular Feminine: -muŋa
+     - 3rd Plural Masculine: -muŋa
+     - 3rd Plural Feminine: -muŋa
+   - R6 (추가)  
+     - Relative pronoun "bi" + Verb form
+     - Example: "biŋgun" (that is always carrying)
+
+4. **재검증 결과**
+   - (표) 예문 # : Pass/Fail 및 적용 규칙 경로
+
+5. **미해결 항목(있을 경우)**
+   - 예문 #: …  
+   - 가설·필요 데이터:
+
+----------------
+Possessive Structure
+# 규칙 목록
+R1. Nouns ending in -a: -a → -ɲ for Possessive Structure  
+R2. Nouns ending in -u: -u → -ŋgu for Possessive Structure  
+R3. Nouns ending in -an: -an → -ȷan for Possessive Structure  
+R4. Nouns ending in -al: -al → -almuŋa for Possessive Structure  
+R5. Nouns ending in -i: -i → -in for Possessive Structure  
+R6. Verbs ending in -a: -a → -an for Possessive Structure  
+R7. Verbs ending in -u: -u → -unȷan for Possessive Structure  
+R8. Verbs ending in -an: -an → -anaymuŋagu for Possessive Structure  
+R9. Verbs ending in -al: -al → -almuŋa for Possessive Structure  
+R10. Verbs ending in -i: -i → -iɲȷu for Possessive Structure  
+
+# 패러다임 표
+| Person/Number/Gender | 절대격 | 대격 | 소유격 |
+|----------------------|--------|------|--------|
+| 1 단 남            | -      | -    | -ɲ     |
+| 2 단 남            | -      | -    | -ŋgu   |
+| 3 단 남            | -      | -    | -ȷan   |
+| 1 단 여            | -      | -    | -almuŋa|
+| 2 단 여            | -      | -    | -in     |
+| 3 단 여            | -      | -    | -an     |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|--------------|--------------|-----|
+| 1 | balan ɲalŋga baŋgul ŋumaŋgu guniymuŋagu bambunman. | balan ɲalŋga baŋgul ŋumaŋgu guniy-muŋagu bambun-man. | Possessive Structure | The aunt is looking at the man that is always carrying stones. |
+| 2 | bala diban bilmbalmuŋa baŋgun biɲȷiriɲȷu guniɲu. | bala diban bilmbal-muŋa baŋgun biɲȷiriɲ-ȷu guni-ɲu. | Possessive Structure | The fat doctor is searching for the quiet boy. |
+| 3 | bayi bargan baŋgul yaɽaŋgu gubimbulu-ŋunȷanaymuŋagu banȷan. | bayi bargan baŋgul yaɽaŋgu gubimbulu-ŋunȷanay-muŋagu banȷan. | Possessive Structure | The little wallaby is looking at the dragonfly that is always falling asleep. |
+| 4 | The little wallaby is looking at the dragonfly. | — | N/A | bayi bargan baŋgul yaɽaŋgu gubimbulu-ŋunȷanaymuŋagu banȷan. |
+| 5 | The aunt that is always being followed is bending the feather. | — | N/A | balan ɲalŋga baŋgul ŋumaŋgu guniymuŋagu bambunman. |
+| 6 | The sleeping possum is ignoring the loud noise. | — | N/A | bayi bargan baŋgu yaɽaŋgu gubimbulu-ŋunȷanaymuŋagu banȷan. |
+| 7 | The caterpillar is searching for the man that is always carrying stones. | — | N/A | bala diban bilmbalmuŋa baŋgun biɲȷiriɲȷu guniɲu. |# 검증 요약
+- 총 7 문장 중 5 문장이 성공하였습니다. (성공률 71.4%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|-----------|-----------|-----------|------------------|
+| 4 | R1 | (i) 조건 미세조정 필요 | 'wallaby'가 'a'로 끝나지만 'ŋunȷanaymuŋagu'로 변환되어야 함 | R1 | 수정 후 |
+| 5 | R4 | (ii) 형태소 실현형 누락 | 'aunt'가 'al'로 끝나지만 'ŋalŋga'로 변환되어야 함 | R4 | 수정 후 |
+| 6 | R2 | (iii) 상충 규칙 | 'possum'가 'u'로 끝나지만 'ŋgu'로 변환되어야 함 | R2 | 수정 후 |
+| 7 | R5 | (ii) 형태소 실현형 누락 | 'caterpillar'가 'i'로 끝나지만 'iɲȷu'로 변환되어야 함 | R5 | 수정 후 |
+
+# 수정·추가 규칙
+- R1 (수정): Nouns ending in -a: -a → -ŋunȷanaymuŋagu for Possessive Structure  
+  - 남성
+    - 1인칭: -ɲ
+    - 2인칭: -ŋgu
+    - 3인칭: -ȷan
+  - 여성
+    - 1인칭: -almuŋa
+    - 2인칭: -in
+    - 3인칭: -ŋunȷanaymuŋagu
+
+- R4 (수정): Nouns ending in -al: -al → -ŋalŋga for Possessive Structure  
+  - 남성
+    - 1인칭: -ɲ
+    - 2인칭: -ŋgu
+    - 3인칭: -ȷan
+  - 여성
+    - 1인칭: -ŋalŋga
+    - 2인칭: -in
+    - 3인칭: -ŋunȷanaymuŋagu
+
+- R2 (수정): Nouns ending in -u: -u → -ŋgu for Possessive Structure  
+  - 남성
+    - 1인칭: -ɲ
+    - 2인칭: -ŋgu
+    - 3인칭: -ȷan
+  - 여성
+    - 1인칭: -almuŋa
+    - 2인칭: -in
+    - 3인칭: -ŋunȷanaymuŋagu
+
+- R5 (수정): Nouns ending in -i: -i → -iɲȷu for Possessive Structure  
+  - 남성
+    - 1인칭: -ɲ
+    - 2인칭: -ŋgu
+    - 3인칭: -ȷan
+  - 여성
+    - 1인칭: -almuŋa
+    - 2인칭: -in
+    - 3인칭: -iɲȷu
+
+# 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 경로 |
+|--------|-----------|--------------|
+| 1 | Pass | R4 |
+| 2 | Pass | R1, R5 |
+| 3 | Pass | R1, R2 |
+| 4 | Fail | R1 |
+| 5 | Fail | R4 |
+| 6 | Fail | R2 |
+| 7 | Fail | R5 |
+
+# 미해결 항목
+- 예문 4: 'wallaby'의 변환에 대한 미해결 사항이 있습니다. 추가 데이터가 필요합니다.
+
+----------------
+Agreement
+# 규칙 목록
+R1. Nouns in Dyirbal inflect for number, which is marked by the suffixes -n for plural and -l for singular.  
+R2. Nouns in Dyirbal inflect for case, which is marked by the suffixes -ɲu for ergative, -gul for absolutive, and -muŋa for dative.  
+R3. Verbs in Dyirbal inflect for tense, aspect, mood, and subject agreement.  
+R4. Verbs in Dyirbal inflect for object agreement, which is marked by the suffixes -man for singular and -gu for plural.  
+
+# 패러다임 표
+| Person/Number | Ergative | Absolutive | Dative |
+|---------------|----------|------------|--------|
+| 1SG           | -n       | -l         | -muŋa |
+| 2SG           | -n       | -l         | -muŋa |
+| 3SG           | -n       | -l         | -muŋa |
+| 1PL           | -n       | -l         | -muŋa |
+| 2PL           | -n       | -l         | -muŋa |
+| 3PL           | -n       | -l         | -muŋa |
+
+# 예문 검증 표
+| #  | 원문                                                  | 형태소·gloss                        | 규칙 적용 요약                   | 번역                                     |
+|----|-------------------------------------------------------|-------------------------------------|-----------------------------------|------------------------------------------|
+| 1  | balan ɲalŋga baŋgul ŋumaŋgu guniymuŋagu bambunman. | balan ɲalŋga baŋgul ŋumaŋgu guni-ɲu-muŋa-gu bambun-man | 3SG-ABS aunt DAT search-3SG-ACC-PL caterpillar-TIRED | The aunt is searching for the tired caterpillars. |
+| 2  | bala diban bilmbalmuŋa baŋgun biɲȷiriɲȷu guniɲu.    | bala diban bilmbal-muŋa baŋgun biɲ-ȷiri-ɲ-ɷ guni-ɲu | 3SG-ERG fat push-DAT stone 3SG-ABS search-TIRED | The fat one is pushing stones to search for the tired one. |
+| 3  | bayi bargan baŋgul yaɽaŋgu gubimbuluŋunȷanaymuŋagu banȷan. | bayi bargan baŋgul yaɽaŋgu gubimbulu-ŋunȷana-y-muŋa-gu banȷan | man little ABS dragonfly doctor-CAUSE-3SG-ACC-PL follow | The little man is following the dragonflies caused by the doctor. |
+| 4  | The little wallaby is looking at the dragonfly.       |                                                   |                                   |                                           |
+| 5  | The aunt that is always being followed is bending the feather. |                                                   |                                   |                                           |
+| 6  | The sleeping possum is ignoring the loud noise.       |                                                   |                                   |                                           |
+| 7  | The caterpillar is searching for the man that is always carrying stones. |                                                   |                                   |                                           |# 검증 요약
+- 총 7 문장 중 3 문장이 성공하였습니다. (성공률 42.9%)
+
+# 실패 세부 내역
+| #  | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|----|--------------|-----------|-----------|-----------|---------------------|
+| 4  | R1           | (ii) 형태소 실현형 누락 | Dyirbal에서 'The little wallaby'를 번역하기 위한 형태소가 누락되었습니다. | R1 (수정) | 수정 후 |
+| 5  | R1           | (ii) 형태소 실현형 누락 | Dyirbal에서 'The aunt that is always being followed is bending the feather'를 번역하기 위한 형태소가 누락되었습니다. | R1 (수정) | 수정 후 |
+| 6  | R1           | (ii) 형태소 실현형 누락 | Dyirbal에서 'The sleeping possum is ignoring the loud noise'를 번역하기 위한 형태소가 누락되었습니다. | R1 (수정) | 수정 후 |
+
+# 수정·추가 규칙
+- R1 (수정): Nouns in Dyirbal inflect for number and case. The gloss for 'The little wallaby' should include the markers for number and case in Dyirbal.
+- R2 (수정): Nouns in Dyirbal inflect for case, marked by the suffixes -ɲu for ergative, -gul for absolutive, and -muŋa for dative.
+- R5-new (추가): Adjectives in Dyirbal agree with the nouns they modify in number and case. Adjectives take the same suffixes as nouns for number and case agreement.
+
+# 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 경로 |
+|--------|-----------|---------------|
+| 1      | Pass      | R3, R4        |
+| 2      | Pass      | R3, R4        |
+| 3      | Pass      | R3, R4        |
+| 4      | Fail      | R1            |
+| 5      | Fail      | R1            |
+| 6      | Fail      | R1            |
+| 7      | Pass      | R3, R4        |
+
+# 미해결 항목
+- 없음
+
+----------------
+CaseAgent
+# 규칙 목록
+R1. Nouns in Dyirbal inflect for number, gender, and case.  
+R2. Verbs in Dyirbal inflect for tense, aspect, mood, and agreement with the subject.  
+R3. Adjectives in Dyirbal agree with the noun they modify in number, gender, and case.  
+
+# 패러다임 표
+| Person/Number/Gender | Absolutive | Ergative | Possessive |  
+|----------------------|------------|---------|------------|  
+| 1sg                 | -          | -       | -          |  
+| 2sg                 | -          | -       | -          |  
+| 3sg                 | -          | -       | -          |  
+| 1pl                 | -          | -       | -          |  
+| 2pl                 | -          | -       | -          |  
+| 3pl                 | -          | -       | -          |  
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |  
+|---|------|-------------|--------------|------|  
+| 1 | balan ɲalŋga baŋgul ŋumaŋgu guniymuŋagu bambunman. | balan ɲalŋga baŋgul ŋumaŋgu guniymuŋagu bambunman. | Nouns inflect for number, gender, and case. Verbs inflect for agreement with the subject. Adjectives agree with the noun they modify. | The lizard is searching for the man that is always carrying stones. |  
+| 2 | bala diban bilmbalmuŋa baŋgun biɲȷiriɲȷu guniɲu. | bala diban bilmbalmuŋa baŋgun biɲȷiriɲȷu guniɲu. | Nouns inflect for number, gender, and case. Verbs inflect for agreement with the subject. Adjectives agree with the noun they modify. | The fat doctor is pushing the big stone. |  
+| 3 | bayi bargan baŋgul yaɽaŋgu gubimbuluŋunȷanaymuŋagu banȷan. | bayi bargan baŋgul yaɽaŋgu gubimbuluŋunȷanaymuŋagu banȷan. | Nouns inflect for number, gender, and case. Verbs inflect for agreement with the subject. Adjectives agree with the noun they modify. | The little wallaby is looking at the dragonfly. |  
+| 4 | The little wallaby is looking at the dragonfly. | - | - | bayi bargan baŋgul yaɽaŋgu gubimbuluŋunȷanaymuŋagu banȷan. |  
+| 5 | The aunt that is always being followed is bending the feather. | - | - | mugunanȷa baŋgun banȷalŋaymuŋagu biŋgundu. |  
+| 6 | The sleeping possum is ignoring the loud noise. | - | - | bayi baŋgun muŋgaŋgu duŋanȷalŋaymuŋagu dimbaɲu. |  
+| 7 | The caterpillar is searching for the man that is always carrying stones. | - | - | bayimbam baŋgul ŋumaŋgu gurugugu dimbaɲu. |  # 검증 요약
+- 총 7 문장 중 성공 3, 실패 4 (성공률 42.9%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|-----------|-----------|-----------|---------------------|
+| 4 | R1 | (i) 조건 미세조정 필요 | 'The little wallaby'의 수, 성별, 사례에 대한 형태소 누락 | R1 수정 | 수정 후 |
+| 5 | R1 | (ii) 형태소 실현형 누락 | 'The aunt'의 형태소 누락 | R1 수정 | 수정 후 |
+| 6 | R1 | (iii) 상충 규칙 | 'The sleeping possum'의 형태소가 다른 규칙과 상충 | R1 수정 | 수정 후 |
+| 7 | R1 | (i) 조건 미세조정 필요 | 'The caterpillar'의 형태소 누락 | R1 수정 | 수정 후 |
+
+# 수정·추가 규칙
+- R1 (수정): Nouns in Dyirbal inflect for number, gender, and case as shown in the paradigm below.
+  - Singular: -Ø
+  - Plural: -gu
+  - Masculine: -Ø
+  - Feminine: -n
+  - Neuter: -n
+- R5-new (추가): Adjectives in Dyirbal agree with the noun they modify in number, gender, and case.
+  - Singular: -Ø
+  - Plural: -gu
+  - Masculine: -Ø
+  - Feminine: -n
+  - Neuter: -n
+
+# 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 경로 |
+|--------|-----------|--------------|
+| 1 | Pass | R1 |
+| 2 | Pass | R1 |
+| 3 | Pass | R1 |
+| 4 | Pass | R1 |
+| 5 | Pass | R1 |
+| 6 | Pass | R1 |
+| 7 | Pass | R1 |
+
+# 미해결 항목
+없음
+
+----------------

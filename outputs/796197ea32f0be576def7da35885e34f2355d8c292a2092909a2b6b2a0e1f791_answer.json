@@ -1,0 +1,145 @@
+{
+  "source_language": "Madak",
+  "target_language": "English",
+  "meta": "ɛ is a vowel. ŋ and ʃ are consonants. The doubling of a vowel denotes length. The marks ˊ, ˉ and ˋ indicate high, middle, and low tone, respectively.",
+  "train": "lavatbungmenemen -> the whole world\nlaxangkatli -> many eyes\nlaxanoos -> many vines\nlaxao -> fire\nlemparoos -> big vines\nlengkompixan -> songs\nlevempeve -> hearts\nlevenaleng -> days\nlevengkot -> places\nlevenmenemen -> villages\nlivixan -> singing\nloroonan -> spirit\nloxongkao -> (hot coal/ember)\nloxontaamang -> part of a garden\nlualeng -> two days\nlubungtadi -> group of men\nluneton -> two brothers; two sisters\nlurubuno -> grandchild\nluuna -> tree\nluvanga -> two things\nluvatpeve -> two big hearts\nluvutneton -> brothers; sisters\nluvuttadi -> men\nluxavus -> two white men",
+  "test": [
+    [
+      "lavatbungmenemen",
+      "big group of villages",
+      ">"
+    ],
+    [
+      "laradi",
+      "man",
+      ">"
+    ],
+    [
+      "lavatkonuna",
+      "big branch",
+      ">"
+    ],
+    [
+      "laxantoonan",
+      "many spirits",
+      ">"
+    ],
+    [
+      "levengkatli",
+      "eyes",
+      ">"
+    ],
+    [
+      "loxot",
+      "place",
+      ">"
+    ],
+    [
+      "lubungkavus",
+      "group of white men",
+      ">"
+    ],
+    [
+      "luvaroos",
+      "two big vines",
+      ">"
+    ],
+    [
+      "leveve",
+      "heart",
+      "<"
+    ],
+    [
+      "leventaamang",
+      "gardens",
+      "<"
+    ],
+    [
+      "laxampanga",
+      "many things",
+      "<"
+    ],
+    [
+      "luvuttubuno",
+      "grandchildren",
+      "<"
+    ],
+    [
+      "luxonaleng",
+      "two parts of day",
+      "<"
+    ],
+    [
+      "lengkonuna",
+      "branches",
+      "<"
+    ],
+    [
+      "lempatkonuna",
+      "big branches",
+      "<"
+    ]
+  ],
+  "response": [
+    [
+      1,
+      "the whole world"
+    ],
+    [
+      1,
+      "?? (no translation available)"
+    ],
+    [
+      1,
+      "the whole tree"
+    ],
+    [
+      1,
+      "part of a garden"
+    ],
+    [
+      1,
+      "places"
+    ],
+    [
+      1,
+      "?? (no translation available)"
+    ],
+    [
+      1,
+      "group of men"
+    ],
+    [
+      1,
+      "two vines"
+    ],
+    [
+      0,
+      "lemparoos"
+    ],
+    [
+      0,
+      "loxontaamang"
+    ],
+    [
+      0,
+      "laxanoos"
+    ],
+    [
+      0,
+      "lurubuno"
+    ],
+    [
+      0,
+      "?? (no translation available)"
+    ],
+    [
+      0,
+      "?? (no translation available)"
+    ],
+    [
+      0,
+      "?? (no translation available)"
+    ]
+  ]
+}

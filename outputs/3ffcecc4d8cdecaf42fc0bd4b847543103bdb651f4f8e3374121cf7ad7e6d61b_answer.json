@@ -1,0 +1,73 @@
+{
+  "source_language": "Norwegian",
+  "target_language": "English",
+  "meta": "",
+  "train": "Bussen stanser her. -> The bus stops here.\nJeg har en bil. -> I have a car.\nBilen stanser her. -> The car stops here.\nJeg har eplet. -> I have the apple.\nJeg har et eple. -> I have an apple.\nEn kvinne har eplet. -> A woman has the apple.\nKvinna har biler. -> The woman has cars.\nKvinna har bilene. -> The woman has the cars.\nJeg har busser. -> I have buses.\nKvinnene stanser her. -> The women stop here.\njente -> girl\nhund -> dog\nhotell -> hotel\nsko -> shoe\nmann -> man\nikke -> not",
+  "test": [
+    [
+      "Jenta stanser her.",
+      "The girl stops here.",
+      "<"
+    ],
+    [
+      "En jente har et hotell.",
+      "A girl has a hotel.",
+      "<"
+    ],
+    [
+      "Jeg har hundene.",
+      "I have the dogs.",
+      "<"
+    ],
+    [
+      "Jenta har hunder.",
+      "The girl has dogs.",
+      "<"
+    ],
+    [
+      "Mennene har epler.",
+      "The men have apples.",
+      ">"
+    ],
+    [
+      "Kvinna har ikke skoene.",
+      "The woman does not have the shoes.",
+      ">"
+    ],
+    [
+      "Jeg har ikke eplene.",
+      "I do not have the apples.",
+      ">"
+    ]
+  ],
+  "response": [
+    [
+      0,
+      "Jenta stopper her."
+    ],
+    [
+      0,
+      "En jente har et hotell."
+    ],
+    [
+      0,
+      "Jeg har hundene."
+    ],
+    [
+      0,
+      "Jenta har hunder."
+    ],
+    [
+      1,
+      "The men have apples."
+    ],
+    [
+      1,
+      "The woman does not have the shoes."
+    ],
+    [
+      1,
+      "I do not have the apples."
+    ]
+  ]
+}

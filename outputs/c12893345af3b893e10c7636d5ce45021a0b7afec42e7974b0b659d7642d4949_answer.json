@@ -1,0 +1,109 @@
+{
+  "source_language": "Wambaya",
+  "target_language": "English",
+  "meta": "",
+  "train": "Ngarlu nya. -> You.SG danced.\nGulugba ngu. -> I will sleep.\nBardbi ga bungmanya. -> The old woman ran [away].\nNgunybulugi barrawunguji. -> The doctor has a house.\nNgajbi nginya. -> I saw you.SG.\nDagumajba nguyu ngunybulugi. -> She will strike the doctor.\nAlanga gu ngarlujba janjingunya. -> The girl will dance with the dog.\nNgajba gununyu. -> He will see you.SG.\nNgirra nga gijilulu. -> I stole the money.\nYagujba nyu barrawuwaji. -> You.SG will leave him without a house.\nDaguma ngiyinga bungmanyani. -> The old woman struck me.\nBardbi ga darranggunguji. -> He ran [away] with the stick.\nAlayulu ngiya juwa. -> She found the man.\nJuwani gina ngajbi gijilulungunya. -> The man saw her with the money.\nYagu gininga. -> He left me.\nBungmaji gina ngajbi balamurruwaji. -> He saw the old man without a spear.\nDirragba gu bungmaji. -> The old man will jump.",
+  "test": [
+    [
+      "Alayulujba nguyunyu bungmanyani.",
+      "The old woman will find you.SG.",
+      ">"
+    ],
+    [
+      "Yagu gininya.",
+      "He left you.",
+      ">"
+    ],
+    [
+      "Janji darrangguwaji.",
+      "The dog doesn’t have a stick.",
+      ">"
+    ],
+    [
+      "Ngirra nya alanga.",
+      "You stole the girl.",
+      ">"
+    ],
+    [
+      "Daguma nyinga.",
+      "You struck me.",
+      ">"
+    ],
+    [
+      "Dirragbi ga balamurrungunya.",
+      "She jumped with the spear.",
+      ">"
+    ],
+    [
+      "Yagujba nyungu.",
+      "You will leave me",
+      "<"
+    ],
+    [
+      "Gulugbi ga ngunybulugi.",
+      "The doctor slept",
+      "<"
+    ],
+    [
+      "Juwa gu bardba gijilulunguji.",
+      "The man will run [away] with the money",
+      "<"
+    ],
+    [
+      "Ngirrajba gunu janji.",
+      "He will steal the dog",
+      "<"
+    ],
+    [
+      "Ngajbi ngiyinya alangani.",
+      "The girl saw you",
+      "<"
+    ]
+  ],
+  "response": [
+    [
+      1,
+      "We will steal the dog."
+    ],
+    [
+      1,
+      "He left me."
+    ],
+    [
+      1,
+      "She ran [away]."
+    ],
+    [
+      1,
+      "I found the girl."
+    ],
+    [
+      1,
+      "The old woman struck me."
+    ],
+    [
+      1,
+      "We will jump with the spear."
+    ],
+    [
+      0,
+      "Nguyunyu nguya alayulu."
+    ],
+    [
+      0,
+      "Ngunybulugi bardbi."
+    ],
+    [
+      0,
+      "Janji ga darrangguwaji."
+    ],
+    [
+      0,
+      "Bardbi ga balamurrungunya."
+    ],
+    [
+      0,
+      "Alanga ga ngajbi."
+    ]
+  ]
+}

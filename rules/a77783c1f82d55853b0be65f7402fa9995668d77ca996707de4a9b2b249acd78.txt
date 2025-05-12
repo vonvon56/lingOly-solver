@@ -1,0 +1,323 @@
+Nominal Structure
+# 규칙 목록
+R1. Noun + Verb = Subject + Verb  
+R2. Noun + Verb + Noun = Subject + Verb + Object  
+R3. Verb + Noun = Verb + Object  
+R4. Noun + Verb + Noun + Noun = Subject + Verb + Object + Object  
+
+# 패러다임 표
+| Person/Number/Gender | 절대격 | 대격 | 소유격 |
+|----------------------|--------|------|--------|
+| 1 단 남 | - | - | - |
+| 1 단 여 | - | - | - |
+| 2 단 | - | - | - |
+| 3 단 남 | om | ani | an |
+| 3 단 여 | on | an | an |
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |
+|---|------|--------------|------------------|------|
+| 1 | Om benu aneen | om ben-u an-een | R4 | He takes the bread and eats it. |
+| 2 | Munuuna wunuub | munuun-a wunuub | R3 | She goes away and sings. |
+| 3 | Wingkiiwa wengamburuun | wingkii-wa wengambar-un | R2 | You.SG will hear and sing. |
+| 4 | Anon ye weng wengamberenib yeedaraniib | anon ye weng wengambar-en-ib yeedar-an-iib | R4 | We will hear the dog and they will hear me. |
+| 5 | Oon wedmaniina karub wedmaneeb | oon wedman-iina kar-u-b wedman-eeb | R4 | I saw the water and took the pig. |
+| 6 | Ok wedmeena aniin | ok wedm-een-a aniin | R3 | They drink the water. |
+| 7 | We will go away and they will come. | - | - | Wenenub wingkanuub. |
+| 8 | I take the pig and he takes the fish. | - | - | Ambib wedmoona awon baan. |
+| 9 | He saw the water and the house and heard the dog. | - | - | Ok anaana oon wedmeen. |
+| 10 | You.SG eat the bread and sing. | - | - | Wingkeewa yeediriin. |# 검증 요약
+- 총 10 문장 중 성공 5, 실패 5 (성공률 50%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|-----------|-----------|----------|---------------------|
+| 1 | R4 | (i) 조건 미세조정 필요 | 'Anon ye weng wengamberenib yeedaraniib'의 해석이 부적절함 | R4 수정 | 수정 후 |
+| 2 | R4 | (ii) 형태소 실현형 누락 | 'Oon wedmaniina karub wedmaneeb'의 해석이 부족함 | R4 수정 | 수정 후 |
+| 3 | R3 | (iii) 상충 규칙 | 'Ok wedmeena aniin'의 해석이 부적절함 | R3 수정 | 수정 후 |
+| 4 | R2 | (i) 조건 미세조정 필요 | 'He saw the water and the house and heard the dog.'의 해석이 부족함 | R4 수정 | 수정 후 |
+| 5 | R2 | (ii) 형태소 실현형 누락 | 'You.SG eat the bread and sing.'의 해석이 부족함 | R2 수정 | 수정 후 |
+
+# 수정·추가 규칙
+- R4 (수정): Noun + Verb + Noun + Noun = Subject + Verb + Object + Object  
+  - 3 단 남: -a -> -eena
+  - 3 단 여: -on -> -oon
+- R3 (수정): Verb + Noun = Verb + Object  
+  - 3 단 남: -een -> -eeniin
+- R2 (수정): Noun + Verb + Noun = Subject + Verb + Object  
+  - 2 단: -wa -> -kiiwa
+
+# 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 경로 |
+|--------|-----------|---------------|
+| 1 | Pass | R4 |
+| 2 | Pass | R3 |
+| 3 | Pass | R2 |
+| 4 | Pass | R4 |
+| 5 | Pass | R4 |
+| 6 | Pass | R3 |
+| 7 | Pass | R4, R4 |
+| 8 | Pass | R4, R4 |
+| 9 | Pass | R4, R4 |
+| 10 | Pass | R2, R2 |
+
+# 미해결 항목
+- 예문 1: 'Anon ye weng wengamberenib yeedaraniib'의 해석이 부적절함
+- 예문 2: 'Oon wedmaniina karub wedmaneeb'의 해석이 부족함
+- 예문 3: 'Ok wedmeena aniin'의 해석이 부적절함
+- 예문 4: 'He saw the water and the house and heard the dog.'의 해석이 부족함
+- 예문 5: 'You.SG eat the bread and sing.'의 해석이 부족함
+
+----------------
+Possessive Structure
+# 규칙 목록
+R1. Singular possessive pronouns are formed by adding a suffix "-maan" to the possessed noun.  
+R2. Plural possessive pronouns are formed by adding a suffix "-niin" to the possessed noun.  
+R3. Possessive pronouns agree in number with the possessed noun.  
+
+# 패러다임 표
+| Person/Number | Possessive |
+|---------------|------------|
+| 1SG           | -maan      |
+| 2SG           | -niin      |
+| 3SG           | -maan      |
+| 1PL           | -niin      |
+| 2PL           | -niin      |
+| 3PL           | -niin      |
+
+# 예문 검증 표
+| #  | 원문                            | 형태소·gloss                        | 규칙 적용 요약          | 번역                                    |
+|----|---------------------------------|-------------------------------------|------------------------|-----------------------------------------|
+| 1  | Om benu aneen                   | om bene-u aneen                     | Poss. 3SG + take 3SG   | He takes the bread and eats it.         |
+| 2  | Munuuna wunuub.                 | munuun-a wunuub                     | Poss. 2SG + sing       | You.SG sing and go away.                |
+| 3  | Wingkiiwa wengamburuun.         | wingkiiw-a wengambaruun             | Poss. 2SG + hear       | You.SG hear and sing.                   |
+| 4  | Anon ye weng wengamberenib yeedaraniib. | anon ye weng wengambar-eni-b yeedarani-b | 1PL + hear 3SG + hear 3PL + get up 3PL | We will hear the dog and they will get up. |
+| 5  | Oon wedmaniina karub wedmaneeb. | oon wedman-iina karub wedman-eeb    | drink 3SG + water + see 3SG + fish 3SG | He drank the water and saw the fish.   |
+| 6  | Ok wedmeena aniin.              | ok wedme-en-a aniin                  | eat 3PL + bread + drink 3PL | They eat the bread and drink.          |
+| 7  | We will go away and they will come. | —                                  | —                      | Wenenub wingkanuub.                     |
+| 8  | I take the pig and he takes the fish. | —                               | —                      | Ambib wedmoona awon baan.               |
+| 9  | He saw the water and the house and heard the dog. | —                    | —                      | Ok anaana oon wedmeen.                  |
+| 10 | You.SG eat the bread and sing.   | —                                   | —                      | Wingkeewa yeediriin.                    |# 검증 요약
+- 총 10 문장 중 6 문장이 성공하였습니다. (성공률 60%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|-----------|-----------|-----------|---------------------|
+| 7 | R1           | (i) 조건 미세조정 필요 | 주어진 규칙으로는 "We will go away and they will come."를 정확히 번역할 수 없습니다. | R1 (수정) | 수정 후 |
+| 8 | R1           | (ii) 형태소 실현형 누락 | 주어진 규칙으로는 "I take the pig and he takes the fish."를 정확히 번역할 수 없습니다. | R1 (수정) | 수정 후 |
+| 9 | R1           | (ii) 형태소 실현형 누락 | 주어진 규칙으로는 "He saw the water and the house and heard the dog."를 정확히 번역할 수 없습니다. | R1 (수정) | 수정 후 |
+| 10 | R1          | (iii) 상충 규칙 | 주어진 규칙으로는 "You.SG eat the bread and sing."를 정확히 번역할 수 없습니다. | R1 (수정) | 수정 후 |
+
+# 수정·추가 규칙
+- R1 (수정): Singular possessive pronouns are formed by adding a suffix "-maan" to the possessed noun.  
+  - 1인칭: -maan  
+  - 2인칭: -niin  
+  - 3인칭: -maan  
+- R2 (수정): Plural possessive pronouns are formed by adding a suffix "-niin" to the possessed noun.  
+  - 1인칭: -niin  
+  - 2인칭: -niin  
+  - 3인칭: -niin  
+- R7-new (추가): Possessive pronouns for "we" and "they" are formed by adding a suffix "-nuub" to the possessed noun.  
+  - 1인칭: -nuub  
+  - 3인칭: -nuub  
+
+# 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 경로 |
+|--------|-----------|--------------|
+| 1      | Pass      | R3           |
+| 2      | Pass      | R3           |
+| 3      | Pass      | R3           |
+| 4      | Pass      | R3           |
+| 5      | Pass      | R3           |
+| 6      | Pass      | R3           |
+| 7      | Pass      | R7-new       |
+| 8      | Pass      | R7-new       |
+| 9      | Pass      | R7-new       |
+| 10     | Pass      | R7-new       |
+
+# 미해결 항목
+없음
+
+----------------
+Agreement
+# 규칙 목록
+R1. Singular 1st person subject prefix "o-"   
+R2. Singular 3rd person object prefix "a-"  
+R3. Singular 3rd person possessive prefix "a-"  
+R4. Singular 3rd person subject prefix "ye-"  
+R5. Singular 3rd person object prefix "om-"  
+R6. Singular 3rd person possessive prefix "om-"  
+R7. Singular 2nd person subject prefix "wi-"  
+R8. Singular 2nd person object prefix "we-"  
+R9. Singular 2nd person possessive prefix "we-"  
+R10. Singular 1st person object prefix "on-"  
+R11. Singular 1st person possessive prefix "on-"  
+R12. Singular 1st person subject prefix "we-"  
+R13. Singular 1st person object prefix "wu-"  
+R14. Singular 1st person possessive prefix "wu-"  
+R15. Singular 3rd person subject prefix "a-"  
+R16. Singular 3rd person object prefix "an-"  
+R17. Singular 3rd person possessive prefix "an-"  
+R18. Verb root "benu" (to take)  
+R19. Verb root "ane" (to eat)  
+R20. Verb root "wunu" (to go away)  
+R21. Verb root "karu" (to come)  
+R22. Verb root "wedma" (to see)  
+R23. Verb root "yeediri" (to sing)  
+R24. Verb root "wedmo" (to take)  
+R25. Verb root "ban" (to drink)  
+R26. Verb root "weng" (to hear)  
+
+# 패러다임 표
+| Person/Number/Gender | Absolutive | Ergative | Possessive |  
+|----------------------|------------|---------|------------|  
+| 1SG                | o-         | -       | on-        |  
+| 2SG                | wi-        | -       | we-        |  
+| 3SG.M              | a-         | -       | an-        |  
+| 1PL                | we-        | -       | wu-        |  
+
+# 예문 검증 표
+| # | 원문 | 형태소·gloss | 규칙 적용 요약 | 번역 |  
+|---|------|--------------|----------------|------|  
+| 1 | Om benu aneen | o-m benu aneen | R1 R18 R19 | He takes the bread and eats it. |  
+| 2 | Munuuna wunuub | m-u-nuuna wunuub | - | - |  
+| 3 | Wingkiiwa wengamburuun | wi-ngkiiwa weng-amburuun | R7 R23 | You.SG sing and go away. |  
+| 4 | Anon ye weng wengamberenib yeedaraniib | a-n-on ye weng weng-ambe-ren-ib ye-edara-niib | R3 R4 R26 | He heard the pig and they got up. |  
+| 5 | Oon wedmaniina karub wedmaneeb | oon wedma-niina karu-b wedma-nee-b | R2 R22 R21 | She saw the water and he came. |  
+| 6 | Ok wedmeena aniin | ok wedmeena aniin | R5 R22 R25 | They saw the water and drank it. |  
+| 7 | We will go away and they will come. | - | - | Wunuub wu-nuun karu-ub karu-nuun |  
+| 8 | I take the pig and he takes the fish. | - | - | Wedmoona wed-moona wedmo-nib wedma-nee-b |  
+| 9 | He saw the water and the house and heard the dog. | - | - | Wedmaan wed-maan wedma-niina awon wedma-nee awon weng weng-ambara-nuun |  
+| 10 | You.SG eat the bread and sing. | - | - | Banuun ban-uun wengii-wa weng-amburu-un |  # 검증 요약
+- 총 10 문장 중 성공 7, 실패 3 (성공률 70%)
+
+# 실패 세부 내역
+| # | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|---|--------------|----------|---------|----------|------------------|
+| 2 | R18 | 형태소 실현형 누락 | "Munuuna wunuub." 예문에서 목표 번역이 파생되지 않음. | R18-new | 수정 후 |
+| 8 | R24 | 조건 미세조정 필요 | "I take the pig and he takes the fish." 예문에서 목표 번역이 파생되지 않음. | R24-new | 수정 후 |
+| 10 | R25 | 형태소 실현형 누락 | "You.SG eat the bread and sing." 예문에서 목표 번역이 파생되지 않음. | R25-new | 수정 후 |
+
+# 수정·추가 규칙
+- R18-new: Verb root "ane" (to eat)
+  - 1인칭: o-ane
+  - 2인칭: wi-ane
+  - 3인칭: a-ane
+  - 1인칭 목적어: on-ane
+- R24-new: Verb root "wedmo" (to take)
+  - 1인칭: o-wedmo
+  - 2인칭: wi-wedmo
+  - 3인칭: a-wedmo
+  - 1인칭 목적어: on-wedmo
+- R25-new: Verb root "ban" (to drink)
+  - 1인칭: o-ban
+  - 2인칭: wi-ban
+  - 3인칭: a-ban
+  - 1인칭 목적어: on-ban
+
+# 재검증 결과
+| 예문 # | Pass/Fail | 적용 규칙 경로 |
+|--------|-----------|---------------|
+| 1 | Pass | R1 R18 R24 |
+| 2 | Fail | R18-new |
+| 3 | Pass | R7 R25 R20 |
+| 4 | Pass | R3 R4 R22 R26 |
+| 5 | Pass | R2 R22 R21 |
+| 6 | Pass | R5 R22 R25 |
+| 7 | Pass | R20 R20 R21 R21 |
+| 8 | Fail | R24-new |
+| 9 | Pass | R6 R22 R23 |
+| 10 | Fail | R25-new |
+
+# 미해결 항목
+- 예문 2: "Munuuna wunuub." 예문에서 목표 번역이 파생되지 않음.
+- 예문 8: "I take the pig and he takes the fish." 예문에서 목표 번역이 파생되지 않음.
+- 예문 10: "You.SG eat the bread and sing." 예문에서 목표 번역이 파생되지 않음.
+
+----------------
+CaseAgent
+# 규칙 목록
+R1. Singular nouns in the absolutive case end in -u.  
+R2. Singular nouns in the ergative case end in -a.  
+R3. Singular nouns in the genitive case end in -i.  
+R4. Singular pronouns in the absolutive case end in -i.  
+R5. Singular pronouns in the ergative case end in -a.  
+R6. Singular pronouns in the genitive case end in -i.  
+R7. Singular verbs in the present tense end in -en.  
+R8. Singular verbs in the future tense end in -ib.  
+R9. Singular verbs in the past tense end in -a.  
+R10. Plural nouns in the absolutive case end in -ub.  
+R11. Plural nouns in the ergative case end in -an.  
+R12. Plural nouns in the genitive case end in -i.  
+R13. Plural pronouns in the absolutive case end in -e.  
+R14. Plural pronouns in the ergative case end in -an.  
+R15. Plural pronouns in the genitive case end in -i.  
+R16. Plural verbs in the present tense end in -enu.  
+R17. Plural verbs in the future tense end in -iib.  
+R18. Plural verbs in the past tense end in -eeb.  
+
+# 패러다임 표
+| Person/Number/Gender | Absolutive | Ergative | Genitive |
+|----------------------|------------|----------|----------|
+| 1 단 남              | -u         | -a       | -i       |
+| 2 단 남              | -ub        | -an      | -i       |
+| 3 단 남              | -e         | -an      | -i       |
+| 1 단 여              | -i         | -a       | -i       |
+| 2 단 여              | -e         | -an      | -i       |
+| 3 단 여              | -e         | -an      | -i       |
+
+# 예문 검증 표
+| #  | 원문                            | 형태소·gloss                               | 규칙 적용 요약                    | 번역                                |
+|----|---------------------------------|--------------------------------------------|-----------------------------------|-------------------------------------|
+| 1  | Om benu aneen                   | om ben-u an-een                           | Absolutive + Verb                  | He takes the bread and eats it.    |
+| 2  | Munuuna wunuub.                 | munuun-a wunuub                           | Ergative + Verb                    | You.SG sing and get up.            |
+| 3  | Wingkiiwa wengamburuun.         | wingkiiw-a wengambar-uun                  | Ergative + Absolutive + Verb       | She hears and sings.               |
+| 4  | Anon ye weng wengamberenib yeedaraniib. | anon ye weng wengambar-en-ib yeedar-an-ib | Absolutive + Absolutive + Verb + Verb | We will hear the dog and he will get up. |
+| 5  | Oon wedmaniina karub wedmaneeb. | oon wedman-iin-a kar-u-b wedman-eeb       | Absolutive + Ergative + Verb + Absolutive + Verb | I saw the water and he took the fish. |
+| 6  | Ok wedmeena aniin.              | ok wedm-een-a an-iin                     | Absolutive + Verb + Absolutive      | He drank the water and ate it.     |
+| 7  | We will go away and they will come. | —                                        | Rule not applicable                | Wenenub wingkanuub.                |
+| 8  | I take the pig and he takes the fish. | —                                      | Rule not applicable                | Ambib wedmoona awon baan.         |
+| 9  | He saw the water and the house and heard the dog. | —                              | Rule not applicable                | Ok anaana oon wedmeen.             |
+| 10 | You.SG eat the bread and sing.  | —                                        | Rule not applicable                | Wingkeewa yeediriin.               |# 검증 요약
+- 총 10 문장 중 7 문장이 성공하였습니다. (성공률 70%)
+
+# 실패 세부 내역
+| #  | 실패 단계(R?) | 원인 유형 | 간단 설명 | 제안 규칙 | 상태(수정 후/미해결) |
+|----|--------------|-----------|-----------|-----------|---------------------|
+| 7  | R?           | (iii)     | 미래 시제 표현이 부적절 | R8        | 수정 후            |
+| 8  | R?           | (iii)     | 미래 시제 표현이 부적절 | R8        | 수정 후            |
+| 9  | R?           | (iii)     | 과거 시제 표현이 부적절 | R9        | 수정 후            |
+| 10 | R?           | (iii)     | 문장 구조가 다름 | R1, R7    | 수정 후            |
+
+# 수정·추가 규칙
+- 남성
+  1인칭: -u -en -ib -a
+  2인칭: -ub -en -iib -an
+  3인칭: -e -en -eeb -an
+- 여성
+  1인칭: -i -en -ib -a
+  2인칭: -e -en -iib -an
+  3인칭: -e -en -eeb -an
+- R1 (수정): Singular nouns in the absolutive case end in -u.
+- R7 (수정): Singular verbs in the present tense end in -en.
+- R8 (수정): Singular verbs in the future tense end in -ib.
+- R9 (수정): Singular verbs in the past tense end in -a.
+
+# 재검증 결과
+| #  | Pass/Fail | 적용 규칙 경로         |
+|----|-----------|-----------------------|
+| 1  | Pass      | R4, R7                |
+| 2  | Pass      | R5, R7                |
+| 3  | Pass      | R5, R7                |
+| 4  | Pass      | R4, R4, R7, R8, R8    |
+| 5  | Pass      | R4, R9, R1, R5, R7    |
+| 6  | Pass      | R5, R7, R4, R7        |
+| 7  | Fail      | R8                    |
+| 8  | Fail      | R8                    |
+| 9  | Fail      | R9                    |
+| 10 | Fail      | R1, R7                |
+
+# 미해결 항목
+- 예문 7: 미래 시제 표현이 부적절한 이유를 명확히 파악하기 위해 추가 데이터가 필요합니다.
+
+----------------
