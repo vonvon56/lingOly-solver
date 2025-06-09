@@ -40,13 +40,11 @@ class Puzzle:
             rules=rules,
             tests_json=self.render_tests()
         )
-        print("최종 prompt에 rule 있나?", prompt)
         # GPT 호출
         rsp = gpt(prompt).choices[0].message.content.strip()
         
         # 응답을 줄바꿈으로 분리하여 각 테스트에 적용
         answers = rsp.split('\n')
-        print('생 응답 보자', answers)
         for i, answer in enumerate(answers):
             if i < len(self.tests):
                 if self.tests[i][2] == '>':
@@ -54,7 +52,6 @@ class Puzzle:
                     self.response.append([1, answer])
                 else:
                     self.response.append([0, answer])
-        print('리스폰스는?', self.response)
 
     def save(self, path: str):
         """

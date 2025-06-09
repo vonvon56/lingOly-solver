@@ -1,4 +1,5 @@
 # gpt_utils.py
+# GPT model, temperature, API KEY 등 설정하고 직접 호출하는 파트
 import time, os, openai
 from dotenv import load_dotenv
 

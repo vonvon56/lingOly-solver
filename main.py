@@ -44,7 +44,6 @@ def run_pipeline(puzzle_path: str, temperature=0.5):
 
     for agent in agents:
         grammar_agent = agent
-        print("현재 agent", grammar_agent.name)
         all_rules += grammar_agent.name + '\n'
         rules = grammar_agent.run(puzzle, temperature=temperature)
         all_rules += rules
