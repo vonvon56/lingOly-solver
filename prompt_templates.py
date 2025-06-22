@@ -39,12 +39,10 @@ AGENT_SELECTION_PROMPT = """\
 """
 # INITIAL_GRAMMAR_PROMPT 입력: data 출력: corpus, rules
 # GRAMMAR_PROMPT 입력: corpus, rules, VERIFIER_PROMPT의 output 출력: 갱신된 corpus, rules. unknown 처리도 여기에서. 
-
-# 반 개를 먼저 주는 게 낫겠다. 
 INITIAL_GRAMMAR_PROMPT = """
 # 역할
-당신은 **언어학 올림피아드의 언어 데이터에서 올바른 Grammar rules을 도출하는 Agent**입니다.  
-아래의 문장쌍만을 근거로 단어들의 원형과 해당 언어의 통사 규칙을 도출하십시오. 
+당신은 **언어학 올림피아드의 언어 데이터에서 단어의 원형(Corpus)과 통사 규칙(Rules)을 도출**하고,
+모든 예문을 그 규칙으로 완벽히 설명‧해석해 내는 전문 Agent입니다.
 
 # 입력
 ## 1. 언어 정보
@@ -52,31 +50,49 @@ INITIAL_GRAMMAR_PROMPT = """
 - 타겟 언어: {target}
 - 메타 정보: {meta}
 
-## 2. 데이터(source language ||| target language)
+## 2. 데이터 (source language ||| target language)
 {pairs}
 
 # 작업 규칙
-## corpus 관련
-- English word:source language word 형식으로 적을 것. (예: boy:soyon)
-- corpus에는 단어의 활용형이 아닌 어근을 적을 것(예: run: 달리-)
-- corpus에는 조사, 전치사 등도 반드시 포함할 것. 그래서 추후 해석할 때 단어를 모르는 경우가 절대로 발생하지 않도록 할 것.
-- 해석이 불확실한 단어는 unknown: 단어1, 단어2, ... 형식으로 적을 것
+## A. 분석 순서(3-단계)
+1. **관찰**  
+   - 문장쌍을 색상‧기호 등으로 표시하며 최소 대비쌍(minimal pair)을 찾기.  
+   - 반복·교체되는 형태소, 위치 변화를 모두 기록.
+2. **가설**  
+   - (a) **어순**(SOV/SVO 등) → (b) **격·시제·상** → (c) 나머지 기능어 순으로 가설 수립.  
+   - 가능한 한 ‘최소 규칙’부터 세우고, 불확실 부분은 *후보군*으로 남겨 둔다.
+3. **검증**  
+   - 아직 해석 안 한 예문·빈칸 패러다임에 적용해 오류 여부 확인.  
+   - 예외·불일치가 있으면 가설을 즉시 수정.
 
-## rules 관련
-- 반드시 어순을 먼저 찾을 것
-- corpus 속 단어들에 rule을 적절히 적용하면 예시 data가 완벽히 설명되도록 설계할 것
-- 데이터가 확고한 규칙을 설정하기엔 부족하다면 후보군을 명시하되, 아직 불확실한 추측임을 밝힐 것
-- 절대로 corpus의 내용을 rule에 포함해서는 안 됨. rules는 '문법 규칙', corpus는 단어임을 명심할 것
+## B. Corpus 작성
+- 형식: **EnglishWord:sourceRoot**  (ex. boy:soyon)  
+- ‘원형(root)’만 적고, 모든 기능어·조사·접사·전치사까지 반드시 포함.  
+- 해석이 불확실한 형태소는 `unknown: 형태소1, 형태소2…` 형식.
 
-## decoding 관련
-- corpus와 rule을 기반으로 주어진 문장을 모두 디코딩할 것. 따라서 corpus와 rule은 문장을 올바르게 설명할 수 있어야 함.
-- 불확실한 경우 <unk> 사용할 것. 
-- 통사론 논문에서 주로 사용하는 형식으로, 형태소 경계를 -로 구분하고 문법 요소를 대문자 약어로 표현할 것. 
-- 첫 줄은 저자원 언어의 형태소 분리, 두 번째 줄은 영어 디코딩. 출력 예시에서의 형식을 준수할 것.
-- 단어와 문법 사용의 일관성을 유지할 것. 문법 요소에 따라 변이가 생긴다면 반드시 표기할 것. (예: la: the-FEM le: the-MASC)
+## C. Rules 작성
+1. **어순**을 가장 먼저 명시.  
+2. **격(case)**·**동사 굴절(시제·상)**·**접속/종결** 등 기능 규칙을 위에서 도출한 순서대로 제시.  
+3. 데이터가 부족하면 “(가설)”, “(추정)” 표기로 불확실성 표명.  
+4. 절대로 Corpus 내용을 Rules에 복사하지 말 것.
 
-# 결과 형식 예시: 아래의 형식을 반드시 준수하십시오. 이 외의 불필요한 정보를 포함하지 마십시오.
-```
+## D. 유형론 힌트 & 체크리스트
+| 항목 | 빠른 진단 포인트 |
+|------|-----------------|
+| **NOM-ACC vs ERG-ABS** | S와 A가 같은 표지 → NOM-ACC / S와 P가 같은 표지 → ERG-ABS |
+| **Head-marking** vs **Dependent-marking** | 논항 표지가 동사 쪽? → Head, 명사 쪽? → Dependent |
+| **교착** vs **굴절** vs **고립** | 형태소 경계가 일관·뚜렷 → 교착, 접사 하나에 정보 여러 개 → 굴절, 형태 변동 거의 없음 → 고립 |
+| **Split-ergativity** | 인칭·시제·상 조건별로 격 체계가 바뀌는지 확인 |
+
+# 실전 팁 요약
+| 항목 | 빠른 진단 포인트 |
+|------|-----------------|
+| **NOM-ACC vs ERG-ABS** | S와 A가 같은 표지 → NOM-ACC / S와 P가 같은 표지 → ERG-ABS |
+| **Head-marking** vs **Dependent-marking** | 논항 표지가 동사 쪽? → Head, 명사 쪽? → Dependent |
+| **교착** vs **굴절** vs **고립** | 형태소 경계가 일관·뚜렷 → 교착, 접사 하나에 정보 여러 개 → 굴절, 형태 변동 거의 없음 → 고립 |
+| **Split-ergativity** | 인칭·시제·상 조건별로 격 체계가 바뀌는지 확인 |
+
+# 출력 형식 (반드시 준수)
 [corpus]
 run:달리
 sleep:자
@@ -87,7 +103,7 @@ unknown: 미래, 종이
 
 [rules]
 **어순**
-SOV 어순이다. 
+SOV 어순이다.
 
 **동사의 시제 표현**
 과거: 동사 어간에 '-던'을 붙인다.
@@ -95,53 +111,10 @@ SOV 어순이다.
 미래: 동사 어간에 '-ㄹ'을 붙인다.
 
 **격조사**
-주격: 선행하는 명사가 자음으로 끝날 경우 '이', 모음으로 끝날 경우 '가'를 붙인다.
-대격: 선행하는 명사가 자음으로 끝날 경우 '을', 모음으로 끝날 경우 '를'을 붙인다.
+주격: 선행 명사가 자음 끝이면 '이', 모음 끝이면 '가'
+대격: 선행 명사가 자음 끝이면 '을', 모음 끝이면 '를'
 
-# 올바른 규칙 추론의 예: 내용을 그대로 따라해서는 안 됩니다. 추론 과정과 논리, 그리고 출력 형식을 따르라는 것입니다.
-
-data:
-   "Ofi'at kowi'ã lhiyohli.",
-   "The dog chases the cat."
-
-   "Kowi'at ofi'ã lhiyohli.",
-   "The cat chases the dog."
-
-Inference step
-   target language의 해석을 보면 kowi가 문장 1에서는 목적어, 문장 2에서는 주어로 나타난다. 
-   Ofi는 문장 1에서 주어, 문장 2에서 목적어로 나타난다.
-   동사 chases는 두 문장 모두에서 맨 뒤에 나타나므로, 이 언어의 어순은 SOV이다.
-
-   어순을 토대로 단어를 매칭해 보면, kowi'ã|Kowi'at가 cat, Ofi'at|Ofi'ã가 dog, lhiyohli가 chase의 의미를 가진 것으로 추정된다.
-   단어의 정확한 원형을 알기 위해 grammar rule을 분석하자. 
-
-   정확한 원형을 알기 위해 kowi'ã와 Kowi'at이 나타나는 문장에서 분포 차이를 살펴보면, 
-   The dog chases the cat.과 The cat chases the dog. 의 두 cat은 '격'이 다른 것으로 보인다.
-   따라서 이 언어는 대격의 뒤에 ã, 주격의 뒤에 at을 삽입한다고 가정하자. 
-   이 가설이 ofi'at|ofi'ã의 경우에도 성립하는지 검증하자. 성립한다. 
-
-   따라서 아래의 형태로 corpus와 rules을 도출할 수 있다.
-
-   [corpus]
-   cat: kowi
-   dog: ofi
-   chase: lhiyohli
-
-   [rules]
-   **어순**
-   SOV 언어이다.
-
-   **격조사**
-   주격: -at
-   대격: -ã
-
-   [decoding]
-   John-i Mary-ka caki-lul salangha-n-tako sanygkakha-n-ta. 
-   John-NOM Mary-NOM self-ACC love-PRS-COMP think-PRS-DECL
-
-
-```
-
+(이 예시는 형식 예시일 뿐, 내용은 실제 데이터에 맞게 새로 작성해야 함.)
 """
 
 GRAMMAR_PROMPT = """\
@@ -165,6 +138,20 @@ GRAMMAR_PROMPT = """\
 
 ## 4. rules
 {rules}
+
+## 유형론 힌트 & 체크리스트
+| 항목 | 빠른 진단 포인트 |
+|------|-----------------|
+| **NOM-ACC vs ERG-ABS** | S와 A가 같은 표지 → NOM-ACC / S와 P가 같은 표지 → ERG-ABS |
+| **Head-marking** vs **Dependent-marking** | 논항 표지가 동사 쪽? → Head, 명사 쪽? → Dependent |
+| **교착** vs **굴절** vs **고립** | 형태소 경계가 일관·뚜렷 → 교착, 접사 하나에 정보 여러 개 → 굴절, 형태 변동 거의 없음 → 고립 |
+| **Split-ergativity** | 인칭·시제·상 조건별로 격 체계가 바뀌는지 확인 |
+
+# 실전 팁 요약 (학생 지도용)
+- **색연필 3색**(주격·목적격·동사)을 사용해 시각화하라.  
+- **패러다임 표**로 빈칸을 만들어 규칙 누락 여부를 즉시 확인.  
+- **세계언어유형론 배경지식**(격 배열, head/dependent marking, 형태 유형)을 항상 떠올려 패턴을 좁혀라.  
+- **‘가장 간단한 가설 → 예외 검증 → 수정’** 루프를 빠르게 돌리는 것이 승부처다.
 
 # 작업 규칙
 ## corpus 관련
@@ -335,8 +322,14 @@ SOLVER_PROMPT = """
 \당신은 **Translation Solver Agent**입니다.  
 검증을 마친 **규칙 목록**과 **테스트 문장**을 이용해
 각 문장을 요구되는 언어로 정확히 번역해야 합니다.
+예문 목록은 소수 언어 ||| 다수 언어 pair로 구성되어 있으며, 
+rules와 corpus는 그 예문들의 단어와 문법을 정리한 것입니다.
+그것들을 바탕으로 테스트 문항의 번역을 수행하십시오.
 
 # 입력  
+## 0. 예문 목록
+{train_pairs}
+
 ## 1. rules
 {rules}
 
@@ -359,10 +352,16 @@ output 문장의 개수는 test 질문의 개수와 동일해야 합니다. 임�
 
 # 출력 형식
 반드시 각 문제를 줄바꿈으로 구분하며, 답만 출력합니다. 다른 문장은 절대로 쓰면 안 됩니다.
-예시 출력:
-blahblah
-lala
-dudu
+번역 방향을 반드시 확인하고, 목표 언어가 아닌 언어는 절대로 적지 마십시오.
+
+#예시 출력:
+나는 밥을 맛있게 먹었다.
+I would love that.
+konnichiwa.
+
+# 불가능 출력:
+Translate 'I love you' into Korean.
+
 """
 
 # todo

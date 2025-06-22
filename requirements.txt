@@ -1,0 +1,6 @@
+openai
+tqdm
+dotenv
+nltk
+sacrebleu
+editdistance
