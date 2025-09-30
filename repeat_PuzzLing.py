@@ -228,14 +228,14 @@ def run_pipeline(json_path: str, temperature=0.5):
 # ---------------------------------------------------------------------------
 
 global DATASET_FOLDER;
-DATASET_FOLDER = "submission"
+DATASET_FOLDER = "PuzzLing_Experiment_Dataset"
 global fname
 if __name__ == "__main__":
     for fname in tqdm(os.listdir(DATASET_FOLDER), desc="Processing datasets"):
         if fname.lower().endswith(".json"):
             print(f"\n=== {fname} ===")
             answer = run_pipeline(os.path.join(DATASET_FOLDER, fname), temperature=0.5)
-            with open(f'output/0609/{fname}', "w", encoding="utf-8") as f:
+            with open(f'results/gpt-3.5-turbo/repeat/{fname}', "w", encoding="utf-8") as f:
                 # ensure_ascii=False: 한글이 깨지지 않게
                 # indent=4: 사람이 읽기 좋게 들여쓰기
                 json.dump(log_json, f, ensure_ascii=False, indent=4)

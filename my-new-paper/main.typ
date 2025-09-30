@@ -7,7 +7,8 @@
 
 #show: doc => acl(doc,
   anonymous: false,
-  title: [A Blank ACL Paper],
+  title: [Evaluating Prompting Architectures 
+  for Linguistic Reasoning \ in LLMs: Based on Linguistic Olympiad Problems],
   authors: (
     (
       name: "Gyeongseo Hwang",
@@ -22,83 +23,118 @@
 
 
 #abstract[
-  table of contents
+  This paper investigates whether large language models (LLMs) can truly infer symbolic linguistic rules or merely exploit statistical patterns, by comparing three prompting architectures—Tree-of-Thoughts, iterative updating method, and non-iterative method—on PuzzLing dataset. This paper introduces two distilled knowledge elements, corpus (low-resource language's word-English interpretation mappings) and explicit inference rules, and evaluates their effects. The experiments show that the ToT variant requires more computation but fails to surpass simpler designs. The non-iterative architecture that retains both corpus and rules exceeds the performance of the iterative approach, indicating that repeated LLM self-revision yields minimal gains. \ 
+  To add, at least in low-performance models like GPT-3.5-turbo, corpus extraction provides greater accuracy improvements than rule extraction, showing the importance of lexical grounding over formal rule lists in LLMs' linguistic reasoning. 
+  
+  Moreover, this paper shows synergy between raw example sentences and distilled knowledge. Models achieve peak accuracy when both 'example sentences' and 'corpus + rules' are provided in the prompt. These findings suggest that effective in-context learning for linguistic rule induction hinges on balancing concrete lexical examples with lightweight pattern extraction, while avoiding costly abstract reasoning loops.
 ]
 
 
 = Introduction 
-The central question of this paper is whether LLMs are merely probabilistic machines based on statistical patterns, or whether they can truly infer linguistic rules. Traditional linguistic theories, particularly generative grammar, have characterized language as a system composed of symbolic elements and explicit rules. In contrast, LLMs operate without explicit rules, instead learning context-dependent probability distributions through the optimization of a vast number of parameters.
+The central question of this paper is whether LLMs are merely probabilistic machines based on statistical patterns, or whether they can truly infer linguistic rules. Traditional linguistic theories, particularly generative grammar, have characterized language as a system composed of symbolic elements and explicit rules. In contrast, LLMs operate without explicit rules, learning context-dependent probability distributions through the optimization of a vast number of parameters.
 
-This raises the question of whether such models can effectively capture the rule-governed nature of human language—particularly its compositionality and capacity for generalization. Understanding the generalization capabilities and limitations of LLMs can not only help to illuminate the internal mechanisms of these black-box models, but also offer a valuable theoretical framework for exploring the cognitive underpinnings of human linguistic competence@hasson2022. \ djWJrh 
-
-
-
-
-
-전문적인 Large Reasoning Model의 추론 능력조차 일정 난도 이상의 task에서는 collapse하기도 했다. @illusion-of-thinking 
-
+This raises the question of whether such models can effectively capture the rule-governed nature of human language—particularly its compositionality and capacity for generalization. Understanding the generalization capabilities and limitations of LLMs not only helps to illuminate the internal mechanisms of these black-box models, but also offers a valuable theoretical framework for exploring the cognitive foundation of human linguistic competence@hasson2022. \ 
 
 = Related Work
-아직까지 언어학 올림피아드를 중점적으로 다룬 AI 논문과 데이터셋은 많지 않다. LINGOLY 데이터셋은 90여 개의 저자원 언어를 포함하는 challenging Linguistic Olympiad puzzle이다@bean2024lingolybenchmarkolympiadlevellinguistic. PuzzLing이라는, Linguistic Olympiad에 기반한 Rosetta Stone 데이터셋이 존재한다@sahin-etal-2020-puzzling. 
+So far, there are not many AI papers and datasets that focus specifically on Linguistic Olympiad problems. LINGOLY dataset is a challenging Linguistic Olympiad puzzle that includes over 90 low-resource languages@bean2024lingolybenchmarkolympiadlevellinguistic. There also exists PuzzLing dataset, a Rosetta-Stone-style collection based on Linguistic Olympiad puzzles@sahin-etal-2020-puzzling.
 
-한편, PuzzLing dataset에서 Tree-of-Thoughts 기법과 Standard I/O의 성능을 비교한 선행연구가 있다@lin-etal-2023-solving. input 문장에 가능한 영어 해석이 3가지 뻗어나오고, 다음 step에서 그것의 가능성을 Sure, Maybe, Impossible로 분류한다.  이 연구는 Tree-of-Thoughts를 적용했을 때 Standard I/O보다 오히려 성능이 낮아졌음을 보고하였고, 이유를 아래와 같이 추정하였다.
-1. 프롬프트의 정확성: 프롬프트가 충분히 정확하지 않아 LLM이 혼동함
-2. 평가 방법의 민감도: 현재 평가 방법이 새로운 후보 해결책으로 인해 발생하는 모순을 제대로 감지하지 못했을 수 있음
-3. LLM의 능력: GPT-3.5-Turbo를 사용했는데, ToT의 연산량을 감당하기에는 성능이 부족했을 수 있음
-4. ToT 구조의 적합성: ToT가 언어학 문제 해결에 적합하지 않을 수 있음. 즉, 언어규칙 추론에는 문제를 부분적으로 해결하는 것보다 전체적인 패턴 분석이 더 중요할 수 있음
+Meanwhile, there is a prior work comparing the performance of the ToT technique versus Standard I/O using the PuzzLing dataset@lin-etal-2023-solving. A step presents three possible English translations for each input sentence and, at the next step, classify each translation’s plausibility as Sure, Maybe, or Impossible. If a translation is judged Impossible, it returns to the previous step to regenerate interpretations. This study reported that applying ToT actually resulted in worse performance than Standard I/O, and hypothesized the following reasons:
+1. Prompt Accuracy: The prompts were not precise enough, causing confusion in the LLM.
+2. Sensitivity of the Evaluation Method: The current evaluation method may have failed to properly detect contradictions introduced by new candidate solutions.
+3. LLM Capability: Using GPT-3.5-Turbo may have lacked the performance capacity to handle the computational demands of ToT.
+4. Fit of the ToT Architecture: ToT may not be well-suited for solving linguistic problems; in other words, global pattern analysis might be more important than partial problem solving when inferring language rules.
 
-따라서, 본 연구에서는 전체적 패턴을 분석하되 ToT보다 반복 횟수와 input length를 줄이는 방안을 모색한다.
+Therefore, this study seeks to analyze global patterns while reducing the number of iterations and input length compared to ToT.
+
 = Method
-#figure(image("Figure 2-corpus and rules.png"), caption: [Example of corpus and rules. corpus는 low-resource language:English의 형식이다.]) <figure1>
+#figure(image("Figure 2-corpus and rules.png"), caption: [Example of corpus and rules. The corpus is formatted as “low-resource language: English.”]) <figure1>
+\ 
+This study introduces two elements, corpus and rules, for analyzing global patterns without iteration. The corpus organizes the meanings of words appearing in the example sentences, and the rules are a list of inference rules that adequately explain the given examples (@figure1). Bean et al. (2024) calculated the validity of multiple possible translations, but this paper considers that approach somewhat arbitrary because it does not explicitly describe the derivation process. Therefore, this paper extracted a list of explicit rules. This paper also newly introduced the corpus element, which was absent in previous studies. This draws on human language usage patterns; unless near-native proficiency is required, vocabulary is crucial for language learning and sentence generation. Furthermore, because many pilot-test responses failed to fill in entire words, it was expected that providing a corpus matching word meanings would improve performance.
 
-corpus와 rules, 두 가지 요소를 도입하여 문제를 전체적으로 조망하고자 했다. corpus는 예문에 등장한 단어들의 뜻을 정리한 것이며, rules은 주어진 예문을 잘 설명할 수 있는 규칙들의 목록이다. @figure1 에서  형식을 확인할 수 있다. Bean et al. (2024)에서는 가능한 여러 번역의 validity를 계산하지만, 그 방법은 도출 과정을 명시적으로 설명하지 못하는 임의적인 부분이 있을 것이라 생각하였다. 그래서 rules을 추출하고, 기존 연구에 없던 요소인 corpus를 새로 도입했다. 이는 인간의 언어 사용 양상에서 착안한 것으로, 원어민 수준이 아니라면 언어 학습/문장 생성에 있어 어휘가 중요하다고 보았기 때문이다. 또한 pilot test에서 아예 단어 자체를 채우지 못하는 경우가 많았기에 단어 의미를 매칭한 corpus를 넣어주면 성능이 향상될 것으로 보았다.
+Next, to examine whether “iteration and updating” improve the rules and corpus, two architectures were designed. In this study, we will compare the performance of an iterative updating method—designed to reduce computation compared to ToT—with a non-iterative method. Through this comparison, we aim to determine whether the LLM is capable of updating its own outputs.
 
-다음으로, '반복과 갱신'이 rule과 corpus를 개선하는 효과가 있는지 살펴보기 위해 2가지 구조를 설계했다. 본 연구에서는 ToT보다 연산량을 줄인 반복 갱신 method와 반복 없는 method의 성능을 비교할 것이다. 그럼으로써 LLM에 자신의 출력을 갱신하는 능력이 있는지 알아볼 것이다. 
-또한 GPT-3.5-Turbo와 GPT-4o에서 각각 반복했을 때와 그렇지 않을 때를 비교하여 반복 방식의 성능 부진이 LLM의 capacity(연산량) 때문인지 알아볼 것이다.
+#figure(image("Figure 1-architecture 1 explanation.png"), caption: [Iterative Architecture. \The Initial Model takes half of the entire set of example sentences and extracts both rules and the corpus. It then combines this output with the next batch of example sentences and feeds them into the Grammar agent; this process repeats until all examples have been consumed. Once the iterations are complete, the Solver agent is provided with the target problem along with the accumulated rules and corpus, and is instructed to return the answer.])<Iterative_architecture>
 
-#figure(image("Figure 1-architecture 1 explanation.png"), caption:[반복 architecture])
-
-#figure(image("Figure 3-architecture 2 explanation.png"), caption: [반복하지 않는 architecture])
+#figure(image("Figure 3-architecture 2 explanation.png"), caption: [Non-iterative Architecture. The initial model takes the entire set of example sentences at once to extract both rules and outputs. It then delivers these results together with the problem to be solved to the Solver Agent and receives the answer.])<Noniterative_architecture>
 
 
 
 = Dataset
-LINGOLY 데이터셋으로 분석한다. (설명 붙여넣기)
-PuzzLing은 부록으로 수록한다. \ 
-PuzzLing dataset은 LINGOLY에 비해 난도가 높은 편이지만, 정답 공개된 것이 10개뿐이고 나머지의 성능은 대시보드로만 확인할 수 있다. 그 결과는 하단에 첨부할 예정이다.
+This paper uses PuzzLing dataset for analysis. The PuzzLing dataset is a small translation puzzle collection extracted from Linguistic Olympiad Rosetta Stone type problems, and it encompasses a variety of morphological, syntactic, and phonological features across 81 languages@sahin-etal-2020-puzzling. Each puzzle is designed to lead the solvers to infer the governing rules from only a minimal number of example sentences and translate new sentences accordingly, thereby requiring human-level reasoning ability and meta-linguistic awareness rather than statistical methods. Although the PuzzLing dataset is more challenging than the LINGOLY dataset, only 10 problems have publicly released answers, and performance on the remaining problems can be checked only via the #link("https://eval.ai/web/challenges/challenge-page/2156/participate/")[dashboard]. The results will be provided at the end.
+
 = Experiments
 
+== Experimental Settings
+
+The code and prompts can be viewed at the #link("https://github.com/vonvon56/lingOly-solver.git")[GitHub link]. Experiments were conducted via OpenAI API calls (temperature = 0.5). Unless otherwise specified, the model used was gpt-3.5-turbo; any use of gpt-4o is explicitly noted.
+
+== Evaluation Metrics
+
+We used the four metrics provided on the PuzzLing dashboard (Exact match, BLEU-2, CTER, CHRF) unchanged.
+
+
 = Results
-필요한 Figures
-반복: yes, no
-실험할 모델: gpt-3.5-turbo, gpt-4o
-  근데 rule, corpus, rule+corpus 비교는 3.5로.
 
-prompt 조합: rule only, corpus only, rule+corpus, 그냥 one-shot
-3.5 vs. 4o 비교: one-shot & rule+corpus
-example: yes, no
+#figure(image("Figure 4-results.png"), caption: [Exact match, CHRF, CTER, and BLEU-2 scores for five variations. Only the one labeled “repetition” corresponds to Architecture 1, i.e., the iterative version. All others have had repetition removed.])<figure4>
 
-// 실험1
-3.5: 반복o구조{rule, corpus, rule+corpus, one-shot}
-     반복x{rule, corpus, rule+corpus, one-shot}
+#figure(image("Figure 5-ToT structure.png"), caption: [Diagram of the newly designed ToT structure. we added an Agent selector, which was not present in prior literature, and separated the Grammar Agent from a Verifier Agent that evaluates and refines its output@lin-etal-2023-solving. The role of the Agent selector in planning which Grammar Agent to deploy was crucial.])<figure5>
+\ 
+
+#figure(table(
+  columns: 3,
+  align: (center, right, right, right),
+  inset: 3pt,
+  table.header(
+    [*No.*], [*exact match*], [*bleu*]
+  ),
+
+  [1], [0.00], [5.19], 
+  [2], [85.71], [94.15], 
+  [3], [12.50], [17.68], 
+  [4], [0.00], [1.97], 
+  [5], [10.00], [19.21], 
+  [6], [0.00], [18.53], 
+  [7], [0.00], [10.99], 
+  [8], [0.00], [14.13], 
+  [9], [42.86], [67.59], 
+  [10], [37.50], [63.32],
+  [average], [18.86], [31.28]
+  ), caption: [Experimental results of the ToT structure (@figure5). It takes more than ten times longer, but the results did not improve proportionally to the time invested.]
+)<figure6>
+
+== Ineffectiveness of the Tree-of-Thoughts Approach
+
+@figure6 shows the outcome of the implementation in @figure1, which was ultimately discarded and not discussed in detail in the main text. Unlike @Iterative_architecture and @Noniterative_architecture, this implementation included an “Agent selector” component that determines which grammatical elements are required to solve the problem. In terms of Exact match and BLEU-2 scores, it does not outperform the structure without repetition. We hypothesize the following reasons for its failure despite consuming significantly more computational resources:
+
+1. The Agent selector is not accurate.  
+   To select the correct Agent, one must first understand the grammatical requirements; however, to understand those requirements, one must already have selected the correct Agent, resulting in a circular paradox.
+
+2. The Verifier agent is unable to actively refine the output of the Grammar agent. This is discussed in more detail in #link(<cannotverify>)[section 6.2].
+
+== Limitations in LLM Self-Revision and Verification <cannotverify>
+
+Modifying the examples or guidelines in the prompt did not lead to any improvement of prior outputs. Prior research has shown that without external input, it is difficult for an LLM to self-correct its own outputs@huang2024largelanguagemodelsselfcorrect. The failure of both the ToT structure and the Iterative Structure to improve performance in the Linguistic Olympiad Solver supports this claim.
+
+Even though the Verifier agent and the Grammar agent are invoked separately with completely different prompts, the model was barely able to revise its own outputs. This was true not only for the ToT structure but also for standard iterative processes.
+
+As shown in @figure4, the results of iterative validation using both corpus and rules (@Iterative_architecture) are worse than those obtained by removing iteration but still using corpus and rules (@Noniterative_architecture). Except for the case where only rules are introduced after removing repetition, the performance of the repetition variant is lower than that of the comparison groups.
+
+== Greater Impact of Corpus Extraction over Rule Extraction
+
+In the Non-iterative architecture, the effect of corpus on performance improvement was greater than that of rules. As shown in @figure4, the rule-only variant does not display a significant difference from zero-shot. Instead, the impact of the corpus—which was assessed as less important than rules—proved to be substantial. Corpus analysis shows particular strength in ChrF, an N-gram-based metric. One can attribute the success in placing words correctly to the assistance provided by the corpus.
 
 
-= Analysis
-== rule 추출보다 corpus 추출의 효과가 더 크다. -> rule 추출은 어려운 반면 corpus는 비교적 잘한다?
-필요한 것
-3.5 반복x: rule, corpus, rule+corpus, one-shot
 
-== Tree-of thought 방식은 효과가 없다.
-그냥 PuzzLing 한번 돌렸던 거 그대로 내자. 
-== LLM은 자신의 출력을 수정하고 검증하지 못한다. 
-3.5: 반복o rule, corpus, rule+corpus, one-shot 
-3.5  반복x  그대로 . 
-== 문제에서 주어진 예문을 결과에 다시 한 번 통합해서 넣어주면 더 잘함
-3.5: 반복x, rule+corpus+예문
-4o: 반복x, rule+corpus+예문
-== 번외 실험: 반복에서 모델 번갈아가며 test. gpt 3.5-gpt4o-3.5.그 반대 순서도. 
+== In-Context Learning: Synergy between Corpus and Example Sentences
+
+#figure(image("Figure 6-real metrics.png"), caption: [Actual scores as evaluated on the #link("https://eval.ai/web/challenges/challenge-page/2156/participate/")[Dashboard]. “EF” denotes English→Foreign-language, and “FE” denotes Foreign-language→English translation. Overall, FE performance exceeded EF, and the gain from adding example sentences was steeper for the FE task than for the EF task.])
+
+In the original Solver prompt, the example sentences provided in the problem were replaced by the previously obtained corpus and rules. The sections labeled “with-data” in the figure refer to the cases where the original example sentences were retained and provided alongside the corpus and rules. Although the corpus and rules explicitly list the inferred grammatical patterns and vocabulary extracted from the examples, the AI seems to gain further ideas when it is given not only the corpus and rules but also the original example sentences. Thus, it appears that the combination of example sentences with the corpus and rules boosts in-context learning. The fact that performance is higher when example sentences and the corpus & rules coexist implies a synergy between the two.
+
 = Conclusion
-jjj
+ This study compared multiple prompting architectures—including an iterative updating method, a non-iterative method, and a Tree-of-Thoughts variant—on PuzzLing dataset. The results show that the ToT approach not only failed to outperform simpler architectures but also consumed a lot more computation without meaningful gains. Furthermore, removing iteration while retaining both corpus and rule information (the non-iterative architecture) exceeded the performance of the iterative version, suggesting that repeated self-revision by the LLM provides little added benefit. 
+ 
+ Corpus extraction proved more beneficial than explicit rule extraction, especially under the ChrF metric, indicating that vocabularies aid accurate translation more than formalized inference rules. Finally, it was demonstrated that providing example sentences together with the corpus and rules yields synergy in in-context learning: models achieve their highest accuracy when both raw examples and distilled knowledge co-occur. These findings suggest that LLMs excel when given concrete lexical examples and distilled patterns, but struggle with internal self-revision and abstract reasoning architectures like ToT. Future work should explore hybrid designs that combine example-driven prompting with simple pattern extraction while lowering computational overhead.
 
 // Uncomment this to include your bibliography
 

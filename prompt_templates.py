@@ -369,3 +369,4 @@ Translate 'I love you' into Korean.
 # 대체 puzzle은 기능이 뭐길래 호출되냐? ㅇ 
 # 로그 찍어보면서 solver prompt 개선. 그냥 main 파일에 얘 써놓고 보자.
 # corpus랑 rule 이 변하는 게 없다. 적극적으로 개선 및 추가할 것을 프롬프트에 쓰자
+

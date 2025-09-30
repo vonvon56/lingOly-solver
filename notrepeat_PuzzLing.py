@@ -102,6 +102,7 @@ def call_solver_prompt(
     test_src: str,
     temperature=0.5,
 ):
+    train_pairs = "\n".join(f"{s} ||| {t}" for s, t in train_pairs)
     prompt = SOLVER_PROMPT.format(
         source=source_lang,
         target=target_lang,
@@ -111,6 +112,7 @@ def call_solver_prompt(
         rules=current_rules,
         tests=test_src,
     )
+    # print(prompt)
     rsp = gpt(prompt, temp=temperature).choices[0].message.content
     log_json['answer'] = rsp
     
@@ -228,18 +230,23 @@ def run_pipeline(json_path: str, temperature=0.5):
 # 진입점
 # ---------------------------------------------------------------------------
 
-global DATASET_FOLDER;
-DATASET_FOLDER = "submission"
-global fname
-if __name__ == "__main__":
-    for fname in tqdm(os.listdir(DATASET_FOLDER), desc="Processing datasets"):
-        if fname.lower().endswith(".json"):
-            print(f"\n=== {fname} ===")
-            answer = run_pipeline(os.path.join(DATASET_FOLDER, fname), temperature=0.5)
-            with open(f'output/0609/{fname}', "w", encoding="utf-8") as f:
-                # ensure_ascii=False: 한글이 깨지지 않게
-                # indent=4: 사람이 읽기 좋게 들여쓰기
-                json.dump(log_json, f, ensure_ascii=False, indent=4)
-            # break
-            
+global DATASET_FOLDER
+DATASET_FOLDER = "PuzzLing_Experiment_Dataset"
 
+if __name__ == "__main__":
+    output_dir = "results/gpt-4o/notrepeat"
+    # 결과 저장 폴더가 없으면 생성
+    os.makedirs(output_dir, exist_ok=True)
+
+    for fname in tqdm(os.listdir(DATASET_FOLDER), desc="Processing datasets"):
+        if not fname.lower().endswith(".json"):
+            continue
+
+        print(f"\n=== {fname} ===")
+        answer = run_pipeline(os.path.join(DATASET_FOLDER, fname), temperature=0.5)
+
+        out_path = os.path.join(output_dir, fname)
+        with open(out_path, "w", encoding="utf-8") as f:
+            # ensure_ascii=False: 한글이 깨지지 않게
+            # indent=4: 사람이 읽기 좋게 들여쓰기
+            json.dump(log_json, f, ensure_ascii=False, indent=4)

@@ -1,0 +1,5 @@
+Metric,3.5-notrepeat,3.5-notrepeat-nocorpus,3.5-notrepeat-norules,3.5-notrepeat-oneshot,4o-notrepeat-oneshot,4o-notrepeat-norules,4o-notrepeat-nocorpus,4o-notrepeat
+Exact Match,0.1339,0.1382,0.1149,0.1267,0.0410,0.0643,0.0618,0.0443
+ChrF,0.4793,0.4633,0.4418,0.4065,0.6395,0.6206,0.6052,0.6319
+CTER,0.4546,0.4828,0.4032,0.4087,0.5993,0.5964,0.5798,0.6068
+BLEU-2,0.3932,0.4126,0.3575,0.3458,0.5469,0.5027,0.4989,0.5201

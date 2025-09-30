@@ -10,7 +10,7 @@ load_dotenv()  # .env 파일에서 환경변수 로드
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
-def gpt(prompt=None, messages=None, model="gpt-3.5-turbo", temp=0.5):
+def gpt(prompt=None, messages=None, model="gpt-4o", temp=0.5):
     """
     Wrapper for OpenAI ChatCompletion with retry logic (OpenAI Python SDK >=1.0.0).
 

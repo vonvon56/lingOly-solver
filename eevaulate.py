@@ -1,4 +1,4 @@
-import os
+import os, csv
 import json
 import nltk
 from nltk.translate.bleu_score import corpus_bleu
@@ -15,8 +15,8 @@ ter  = TER()
 # ───────────────────────────────────────────────────────────
 # 폴더 설정
 # ───────────────────────────────────────────────────────────
-DATASET_FOLDER = "Experiment_Dataset"
-OUTPUT_FOLDER  = "output/0609"
+DATASET_FOLDER = "PuzzLing_Experiment_Dataset"
+OUTPUT_FOLDER  = "results/gpt-4o/notrepeat"
 
 # 평균 계산용 누적 변수
 sum_exact = sum_chrf = sum_cter = sum_bleu2 = 0.0
@@ -78,11 +78,45 @@ for file_name in os.listdir(DATASET_FOLDER):
     sum_bleu2 += bleu2
     file_cnt  += 1
 
+
 # ───────────────────────────────────────────────────────────
-# 전체 평균
+# 전체 평균 계산
 # ───────────────────────────────────────────────────────────
+avg_exact = sum_exact / file_cnt
+avg_chrf  = sum_chrf  / file_cnt
+avg_cter  = sum_cter  / file_cnt
+avg_bleu2 = sum_bleu2 / file_cnt
+
 print("=== Averages over all files ===")
-print(f"Exact Match : {(sum_exact/file_cnt):6.2%}")
-print(f"ChrF        : {(sum_chrf /file_cnt)*100:6.2f}")
-print(f"CTER        : {(sum_cter /file_cnt)*100:6.2f}")
-print(f"BLEU-2      : {(sum_bleu2/file_cnt)*100:6.2f}")
+print(f"Exact Match : {avg_exact:6.2%}")
+print(f"ChrF        : {avg_chrf*100:6.2f}")
+print(f"CTER        : {avg_cter*100:6.2f}")
+print(f"BLEU-2      : {avg_bleu2*100:6.2f}")
+
+# 평균 결과 변수 사용
+scores_file = "scores.csv"
+folder_name = os.path.basename(OUTPUT_FOLDER)
+metrics = ["Exact Match", "ChrF", "CTER", "BLEU-2"]
+values = [avg_exact, avg_chrf, avg_cter, avg_bleu2]
+
+# CSV에 저장하기
+if os.path.exists(scores_file):
+    with open(scores_file, newline="", encoding="utf-8") as f:
+        reader = csv.reader(f)
+        header = next(reader)
+        rows = list(reader)
+    header.append(folder_name)
+    for i, row in enumerate(rows):
+        row.append(f"{values[i]:.4f}")
+    with open(scores_file, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(header)
+        writer.writerows(rows)
+else:
+    with open(scores_file, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["Metric", folder_name])
+        for m, v in zip(metrics, values):
+            writer.writerow([m, f"{v:.4f}"])
+
+print(f"Summary saved to {scores_file}")
